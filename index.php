@@ -6,9 +6,9 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Jumbotron Template · Bootstrap v4.6</title>
+    <title>ESTACIONAMIENTO SCORPIONS</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/jumbotron/">
+    <link rel="icon" href="https://i.pinimg.com/originals/2b/b7/ee/2bb7ee6df0647c27083a889a0360dcca.png">
 
     
 
