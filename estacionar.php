@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.80.0">
     <title>Pricing example · Bootstrap v4.6</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">
+    <link rel="canonical" href="localhost/miaplicacionweb/hacerregistro.php">
 
     
 
