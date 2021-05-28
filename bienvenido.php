@@ -9,7 +9,7 @@
     <title>Jumbotron Template · Bootstrap v4.6</title>
 
     <link rel="canonical" href="localhost/miaplicacionweb/hacerregistro.php">
-
+   <link href="favicon.png" rel="icon" type="image/png" sizes="16x16">
     
 
     <!-- Bootstrap core CSS -->
@@ -37,12 +37,12 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
+    
   </head>
   <body>
     
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">Nombre de la Aplicacion</a>
+  <a class="navbar-brand" href="#">BIENVENIDO A NUESTRA EMPRESA</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
