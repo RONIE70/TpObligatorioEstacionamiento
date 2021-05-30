@@ -6,9 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Signin Template · Bootstrap v4.6</title>
+    
+    <?php
+    include_once ('titulo.php');
 
-    <link rel="canonical" href="localhost/miaplicacionweb/hacerregistro.php">
+    ?>
 
     
 
@@ -40,19 +42,19 @@
   </head>
   <body class="text-center">
     
-<form class="form-signin">
-  <img class="mb-4" src="https://uxwing.com/wp-content/themes/uxwing/download/07-design-and-development/bootstrap-4.png" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+<form class="form-signin" action="hacerlogin.php" method="post">
+  <img class="mb-4" src="https://i.pinimg.com/originals/2b/b7/ee/2bb7ee6df0647c27083a889a0360dcca.png" alt="" width="125" height="125">
+ <h1 class="h3 mb-3 font-weight-normal">LOGIN USUARIO</h1>
+  <label for="inputEmail" class="sr-only">correo</label>
+  <input name="correo" type="email" id="inputEmail" class="form-control" placeholder="@correo" required autofocus>
+  <label for="inputPassword" class="sr-only">clave</label>
+  <input name="clave" type="password" id="inputPassword" class="form-control" placeholder="clave usuario" required>
   <div class="checkbox mb-3">
     <label>
-      <input type="checkbox" value="remember-me"> Remember me
+      <input type="checkbox" value="remember-me"> Recordar usuario
     </label>
   </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">ALTA</button>
   <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
 </form>
 
