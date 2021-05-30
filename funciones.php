@@ -6,11 +6,11 @@
 	    $fechaHora1 = date_create($fecha1);
 	    $fechaHora2 = date_create($fecha2);
 	    $diferencia = date_diff($fechaHora1, $fechaHora2);
-	    return 1000;
+	    
 	    return $diferencia->format($formato);
 	}
 
-	function guardarUnAuto($patente){
+	function guardarAuto($patente){
 		$ahora1=date("Y-m-d H:i:s");
 		$renglon="Patente ". $patente ." -> ". $ahora1 . "\n";
 		$archivo=fopen("patente1.txt", "a");
@@ -18,5 +18,13 @@
 		fwrite($archivo, $renglon);
 		fclose($archivo);
 	}
+ 
+ function salirAuto($patente){
+		$ahora1=date("Y-m-d H:i:s");
+		$renglon="Patente ". $patente ." -> ". $ahora1 . "\n";
+		$archivo=fopen("patente1.txt", "a");
 
+		fwrite($archivo, $renglon);
+		fclose($archivo);
+	}
 ?>

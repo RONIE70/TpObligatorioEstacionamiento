@@ -29,7 +29,7 @@ if($clave==$copiaclave)
 	fclose($archivo);
 }
 else{
-	echo "error en clave";
+	header('Location:error.php');
 }
 
  ?>

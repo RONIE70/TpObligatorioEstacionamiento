@@ -46,7 +46,7 @@ while ( !feof($archivo)) {
 		{
 			if($datos[1]==$clave)
 			{
-				echo "Bienvenido";
+				header('Location:index.php');
 				$ingreso="Ingreso";
 				break;
 			}
@@ -54,7 +54,7 @@ while ( !feof($archivo)) {
 	}
 	if($ingreso=="No Ingreso")	
 	{
-		echo "datos erroneos";
+		header('Location:error.php');
 	}
 
  ?>
