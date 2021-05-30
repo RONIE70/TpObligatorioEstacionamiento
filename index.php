@@ -59,7 +59,7 @@
         <a class="nav-link" href="registropatente.php">Registro Patente</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Modalidades</a>
+        <a class="nav-link" href="estacionar.php" tabindex="-1" aria-disabled="true">Modalidades</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
