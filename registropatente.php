@@ -41,9 +41,9 @@
   </head>
   <body class="text-center">
     
-<form class="form-signin" action="hacerentradasalida.php" method="post">
+<form class="form-signin" action="hacerentradapatente.php" method="post">
   <img class="mb-4" src="https://i.pinimg.com/originals/2b/b7/ee/2bb7ee6df0647c27083a889a0360dcca.png" alt="" width="125" height="125">
-  <h1 class="h3 mb-3 font-weight-normal">ENTRADA/SALIDA</h1>
+  <h1 class="h3 mb-3 font-weight-normal">REGISTRO VEHICULO</h1>
   <label for="inputPatente" class="sr-only">PATENTE</label>
   <input name="patente" type="text" id="patente" class="form-control" placeholder="Patente" required autofocus pattern="[A-Za-z]{3}[0-9]{3}">
   
@@ -55,7 +55,8 @@
       <input type="checkbox" value="remember-me"> recordar cliente
     </label>
   </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">INGRESO/EGRESO</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">ENTRADA</button>
+  <!--button class="btn btn-lg btn-primary btn-block" type="submit">SALIDA</button>-->
   <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
 </form>
 

@@ -1,6 +1,6 @@
 <?php
 
-	function DiferenciaDeFechas($fecha1 , $fecha2 , $formato = '%i' ) 
+	function calcularTiempo($fecha1 , $fecha2 , $formato = '%i' ) 
 	{
 		//AAAA-MM-DD
 	    $fechaHora1 = date_create($fecha1);
@@ -12,8 +12,8 @@
 
 	function guardarUnAuto($patente){
 		$ahora1=date("Y-m-d H:i:s");
-		$renglon="Patente". $patente ." -> ". $ahora1 . "\n";
-		$archivo=fopen("estacionar.txt", "a");
+		$renglon="Patente ". $patente ." -> ". $ahora1 . "\n";
+		$archivo=fopen("patente1.txt", "a");
 
 		fwrite($archivo, $renglon);
 		fclose($archivo);
