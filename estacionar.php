@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.80.0">
     <title>Pricing example · Bootstrap v4.6</title>
 
-    <link rel="canonical" href="localhost/miaplicacionweb/hacerregistro.php">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">
 
     
 
@@ -59,10 +59,10 @@
   <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Free</h4>
+        <h4 class="my-0 font-weight-normal">PRECIO X HORA</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+        <h1 class="card-title pricing-card-title">HORA <small class="text-muted">$ 180.-</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
           <li>10 users included</li>
           <li>2 GB of storage</li>
@@ -74,7 +74,7 @@
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Pro</h4>
+        <h4 class="my-0 font-weight-normal">PRECIO ESTADIA</h4>
       </div>
       <div class="card-body">
         <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
@@ -89,7 +89,7 @@
     </div>
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Enterprise</h4>
+        <h4 class="my-0 font-weight-normal">PRECIO MENSUAL</h4>
       </div>
       <div class="card-body">
         <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
