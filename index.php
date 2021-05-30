@@ -56,7 +56,7 @@
         <a class="nav-link" href="login.php">Login Usuario<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="error.php">Registro Patente</a>
+        <a class="nav-link" href="registropatente.php">Registro Patente</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Modalidades</a>
