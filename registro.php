@@ -38,14 +38,14 @@
     
 <form class="form-signin" action="hacerregistro.php" method="post">
   <a href="/"><img class="mb-4" src="https://uxwing.com/wp-content/themes/uxwing/download/07-design-and-development/bootstrap-4.png" alt="" width="72" height="72"></a>
-  <h1 class="h3 mb-3 font-weight-normal">Registrate</h1>
+  <h1 class="h3 mb-3 font-weight-normal">REGISTRO DE USUARIO</h1>
   <label for="inputEmail" class="sr-only">Email</label>
   <input name="correo" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
   <label for="inputPassword" class="sr-only">Contraseña</label>
   <input name="pass" type="password" id="inputEmail" class="form-control" placeholder="Password" required autofocus>
   <label for="inputPassword" class="sr-only">Copia de Contraseña</label>
   <input name="copiapass"type="password" id="inputPassword" class="form-control" placeholder="Repetir Password" required>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">ALTA</button>
   <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
 </form>
     

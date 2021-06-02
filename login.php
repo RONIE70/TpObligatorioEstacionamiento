@@ -38,12 +38,12 @@
     
 <form class="form-signin" action="hacerlogin.php" method="post">
 <a href="/"><img class="mb-4" src="https://uxwing.com/wp-content/themes/uxwing/download/07-design-and-development/bootstrap-4.png" alt="" width="72" height="72"></a>
-  <h1 class="h3 mb-3 font-weight-normal">Por favor logueate</h1>
+  <h1 class="h3 mb-3 font-weight-normal">USUARIO REGISTRADO</h1>
   <label for="inputEmail" class="sr-only">Email</label>
   <input name="correo" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
   <label for="inputPassword" class="sr-only">Contraseña</label>
   <input name="pass" type="password" id="inputEmail" class="form-control" placeholder="Password" required autofocus>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
   <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
 </form>
     
