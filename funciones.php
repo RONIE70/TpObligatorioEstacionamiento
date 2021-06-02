@@ -1,18 +1,6 @@
 <?php
 
-    include_once ('titulo.php');
-
-   /* function guardarAuto($patente)
-    {
-        $horaEntro=date("Y-d-m H-i-s");
-        $renglon= "\n".$patente ." => ". $horaEntro;
-        $archivo=fopen("patente1.txt", "a");
-
-        fwrite($archivo, $renglon);
-        fclose($archivo);
-    }*/
-
-function obtenerHora($fecha)
+function horaObtenida($fecha)
 {
     $datos = explode(" ", $fecha);
 
@@ -22,32 +10,29 @@ function obtenerHora($fecha)
     return $datos[1];
 }
 
-function minutosTranscurridos($fecha_i, $fecha_f)
+function tiempoEnMinutos($fechainicio, $fechafinal)
 {
-    $minutos = (strtotime($fecha_i) - strtotime($fecha_f)) / 60;
+    $minutos = (strtotime($fechainicio) - strtotime($fechafinal)) / 60;
     $minutos = abs($minutos);
     $minutos = floor($minutos);
     return $minutos;
 }
 
-function calcularPrecio($fechaCuandoEntro, $fechaCuandoSalio, $precioMinuto)
+function calcularPrecio($fechaEntro, $fechaSalio, $precioMinuto)
 {
-    $horaCuandoEntro = obtenerHora($fechaCuandoEntro);
-    $horaCuandoSalio = obtenerHora($fechaCuandoSalio);
+    $horaEntrada = horaObtenida($fechaEntro);
+    $horaSalida = horaObtenida($fechaSalio);
 
-    $minutos = minutosTranscurridos($horaCuandoEntro, $horaCuandoSalio);
+    $minutos = tiempoEnMinutos($horaEntrada, $horaSalida);
     $totalPagar = $minutos * $precioMinuto;
 
-    mostrarInfo($fechaCuandoEntro, $fechaCuandoSalio, $totalPagar, $minutos);
+    pantallaInfo($fechaEntro, $fechaSalio, $totalPagar, $minutos);
 
 }
 
-function mostrarInfo($entro, $salio, $precio, $minutos)
+function pantallaInfo($entro, $salio, $precio, $minutos)
 {
-    echo "<br>Fecha que ingresó: ".$entro."<br>Fecha que salió: ".$salio;
-    echo "<br>Minutos estacionado: " . $minutos . "<br><h3>Total a pagar: <b>$" . $precio."</b><h3>";
+    echo "<br>Fecha de Ingreso: ".$entro."<br>Fecha de Egreso : ".$salio;
+    echo "<br>Tiempo estacionado en minutos: " . $minutos . "<br><h3>Total a abonar: <b>$" . $precio."</b><h3>";
 
 }
-
-
-?>

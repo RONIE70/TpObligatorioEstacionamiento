@@ -1,23 +1,9 @@
-<?php 
-include_once ('titulo.php');
-/*date_default_timezone_set("America/Argentina/Buenos_Aires");
-
-$patente=$_POST['patente'];
-
-if($patente!=" ")
-{
-	guardarAuto($patente);
-	echo "REGISTRO EXITOSO!! PUEDE ESTACIONAR";
-	//header('Location:index.php');
-}
-
-else{
-	
-    header('Location:error.php');
+<?php
     
-}*/
+    include_once ('titulo.php');
 
-$patente = $_POST['patente'];
+    
+    $patente = $_POST['patente'];
 
     if($patente != "")
     {
@@ -33,4 +19,4 @@ $patente = $_POST['patente'];
     }
 
 
- ?>
+?>

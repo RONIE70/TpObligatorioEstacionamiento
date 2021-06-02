@@ -7,8 +7,12 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.80.0">
-  <title>Estacionar - EstacionamientoLeon</title>
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">
+  <!--<title>Estacionar - Estacionamiento Scorpions</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">-->
+  <?php
+    include_once ('titulo.php');
+
+    ?>
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <style>
@@ -30,20 +34,23 @@
       margin: 0 auto;
       width: 80%;
     }
+    button{
+    	color: red;
+    }
   </style>
   <!-- Custom styles for this template -->
   <link href="pricing.css" rel="stylesheet">
 </head>
 <body>
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">EstacionamientoLeon</h5>
+    <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Scorpions</h5>
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-2 text-dark" href="registro.php">Registro</a>
     </nav>
     <a class="btn btn-outline-primary" href="login.php">Login</a>
   </div>
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">EstacionamientoLeon</h1>
+    <h1 class="display-4">Estacionamiento Scorpions</h1>
     <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
   </div>
   <div class="container">
@@ -80,7 +87,7 @@
                 <h1>Entrar</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
-              <button type="submit" class="btn btn-success">Enviar</button>
+              <button type="submit" class="btn send1">Enviar</button>
             </form>
           </div>
           <div class="col">
@@ -89,7 +96,7 @@
                 <h1>Salir</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
-              <button type="submit" class="btn btn-danger">Enviar</button>
+              <button type="submit" class="btn send">Enviar</button>
             </form>
           </div>
         </div>

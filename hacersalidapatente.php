@@ -1,16 +1,14 @@
 <?php
-    
-    include_once ('titulo.php');
-    include_once ('funciones.php');
 
-    
+    include_once("funciones.php");
+
     $patente = $_POST['patente'];
-    $precioMinuto = 20;
+    $precioMinuto = 6;
     date_default_timezone_set("America/Argentina/Buenos_Aires");
-    $fechaDeHoy = date("Y-d-m H-i-s");
+    $fechaActual = date("Y-d-m H-i-s");
     $listadoDePatentes = array();
 
-    $archivo = fopen("patente1.txt", "r");
+    $archivo = fopen("patentes.txt", "r");
 
     while(!feof($archivo))
     {
@@ -28,13 +26,13 @@
 
     $existe = "No";
 
-    foreach($listadoDePatentes as $una)
+    foreach($listadoDePatentes as $unDato)
     {
-        if($una[0] == $patente)
+        if($unDato[0] == $patente)
         {
-            echo "Patente: " . $una[0] ;
+            echo "Patente: " . $unDato[0] ;
             $existe = "Si";
-            $precio = calcularPrecio($una[1], $fechaDeHoy, $precioMinuto);
+            $precio = calcularPrecio($unDato[1], $fechaActual, $precioMinuto);
             
         }
     }
@@ -43,5 +41,4 @@
     {
         echo "La patente NO existe!";
     }
-
-?>
+     ?>
