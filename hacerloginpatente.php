@@ -1,6 +1,9 @@
 
 <?php 
 
+    include_once ('titulo.php');
+
+ 
 /*if(isset($_POST['patente']))
 {
 	$mail=$_POST['copiapatente'];
@@ -18,7 +21,7 @@ $archivo=fopen("patentes1.txt", "r");
 
 while ( !feof($archivo)) {
 	$renglon=fgets($archivo);
-	$datosDeUnaPatente=explode("=>", $renglon);
+	$datosDeUnaPatente=explode("->", $renglon);
 	
 	if(isset($datosDeUnaPatente[1]))
 	{

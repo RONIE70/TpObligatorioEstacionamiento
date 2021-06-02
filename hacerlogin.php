@@ -1,10 +1,8 @@
 
 <?php 
-/*var_dump($_GET);
 
-echo "<br>";
+    include_once ('titulo.php');
 
-var_dump($_POST);*/
 if(isset($_POST['correo']))
 {
 	$mail=$_POST['correo'];
@@ -19,26 +17,19 @@ $listadoDeUsuarios=array();
 
 $archivo=fopen("usuarios1.txt", "r");
 
-while ( !feof($archivo)) {
-	//echo "reglon: ".fgets($archivo) ."<br>";
+while ( !feof($archivo)) 
+	{
+	
 	$renglon=fgets($archivo);
 	$datosDeUnUsuario=explode("=>", $renglon);
 	if(isset($datosDeUnUsuario[1]))//$datosDeUnUsuario[0]!=" ")
 	{
 		$listadoDeUsuarios[]=$datosDeUnUsuario;
 	}
-	/*var_dump($datosDeUnUsuario);
-	echo "<br>";*/
-	/*if($datosDeUnUsuario[0] ==$mail)
-	{
-    	if($datosDeUnUsuario[1]==$clave)
-    	{
-    		echo "Bienvenido";
-    	}
-	}*/
-}
+	
+	}
 	fclose($archivo);
-	//var_dump($listadoDeUsuarios);
+	
 	$ingreso="No Ingreso";
 	foreach ($listadoDeUsuarios as $datos)
 	{

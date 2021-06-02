@@ -1,63 +1,47 @@
 <?php
+    
+    include_once ('titulo.php');
+    include_once ('funciones.php');
 
-include_once ("funciones.php");
-$patente = $_POST['patente'];
+    
+    $patente = $_POST['patente'];
+    $precioMinuto = 20;
+    date_default_timezone_set("America/Argentina/Buenos_Aires");
+    $fechaDeHoy = date("Y-d-m H-i-s");
+    $listadoDePatentes = array();
 
-date_default_timezone_set("America/Argentina/Buenos_Aires");
+    $archivo = fopen("patente1.txt", "r");
 
-if (isset($_POST['patente'])) {
-		$patente=$_POST['patente'];
-	}else {
-		die();
-	}
+    while(!feof($archivo))
+    {
+        $renglon = fgets($archivo);
+        $datosDeUnaPatente = explode("=>", $renglon);
 
-$ahora1=date("Y-m-d H:i:s");
-$ahora2=date("Y-m-d H:i:s");
-$diferencia=calcularTiempo($ahora1,$ahora2,"%h");
-echo $diferencia;
-die();
+        if(isset($datosDeUnaPatente[1]))
+        {
+            $listadoDePatentes[] = $datosDeUnaPatente;
+        }
 
-$listadoPatentes=array();
+    }
 
-	$archivo=fopen("patente1.txt","r");
-	while (!feof($archivo)) 
-	{
-		$renglon=fgets($archivo);
-		$datos=explode("->", $renglon);
-		if(isset($datos[1]))
-		{
-			$listadoPatentes[]=$datos;
-		}
+    fclose($archivo);
 
-	}
-	fclose($archivo);
+    $existe = "No";
 
-	$ingreso="NO";
-	foreach ($listadoPatentes as $datos) 
-	{
-		if($datos[0]==$patente){
-			$ingreso="SI";
-			$fechaIni=$datos[1]; //Fecha y hora entrada
-			$fechaFin=date("Y-m-d H:i"); //Fecha y hora Salida
+    foreach($listadoDePatentes as $una)
+    {
+        if($una[0] == $patente)
+        {
+            echo "Patente: " . $una[0] ;
+            $existe = "Si";
+            $precio = calcularPrecio($una[1], $fechaDeHoy, $precioMinuto);
+            
+        }
+    }
 
-			$hora = calcularTiempo($fechaIni, $fechaFin, "%h");
-			$minutos = calcularTiempo($fechaIni, $fechaFin, "%i");
-			echo "Nro de Patente : ". $datos[0] . "<br>";
-			echo "Hora de Entrada: " . $fechaIni . "<br>";
-			echo "Hora de Salida : " . $fechaFin . "<br>";
-			echo "<br>";
-			echo "El vehiculo estuvo estacionado : ";
-			echo calcularTiempo($fechaIni, $fechaFin, "%h hora %i minutos") . "<br>" ;
+    if($existe == "No")
+    {
+        echo "La patente NO existe!";
+    }
 
-			if($hora>0) {
-				$minutos = $minutos + $hora * 60 ;
-			}
-			echo "El precio x minuto $2.- <br> TOTAL A PAGAR  : $" . $minutos*2;
-			break;
-		}
-	}
-	if($ingreso=="NO") {
-			echo "La Patente : ". $patente . " NO FUE ENCONTRADA ... <br>";
-	}
 ?>
-

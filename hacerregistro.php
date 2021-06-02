@@ -1,35 +1,30 @@
+<?php
 
-<?php 
-/*var_dump($_GET);
+    // var_dump($_GET);
 
-echo "<br>";
 
-var_dump($_POST);
+    // echo "<br>";
 
-$mail=$_POST['correo'];
+    // var_dump($_POST);
 
-$clave=$_POST['clave'];
+    $mail = $_POST['correo'];
+    $clave = $_POST['pass'];
+    $copiaclave = $_POST['copiapass'];
 
-$copiaclave=$_POST['copiaclave'];
-echo "su mail es ".$mail. " - su clave es ".$clave . " - su copia clave es ".$copiaclave;*/
-$mail=$_POST['correo'];
+    // echo "<br> Su mail es " . $mail . " su clave es " . $clave . " y su copia clave es " . $copiaclave;
 
-$clave=$_POST['clave'];
+    if($clave == $copiaclave)
+    {
+        date_default_timezone_set("America/Argentina/Buenos_Aires");
+        $ahora = date("Y-d-m H-i-s");
+        $renglon = "\n".$mail. "=>" .$clave. "=>". $ahora;
+        $archivo = fopen("usuarios.txt", "a");
+        fwrite($archivo, $renglon);
+        fclose($archivo);
+    } else
+    {
+        echo "ERROR en clave";
+    }
 
-$copiaclave=$_POST['copiaclave'];
 
-if($clave==$copiaclave)
-{
-	date_default_timezone_set("America/Argentina/Buenos_Aires");
-	$ahora=date("Y-m-d H:i:s");
-	$renglon="\n".$mail."=>".$clave."=>".$ahora;	
-
-	$archivo=fopen("usuarios1.txt","a");
-	fwrite($archivo, $renglon);
-	fclose($archivo);
-}
-else{
-	header('Location:error.php');
-}
-
- ?>
+?>
