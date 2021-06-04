@@ -37,7 +37,7 @@
   <body class="text-center">
     
 <form class="form-signin" action="hacerlogin.php" method="post">
-<a href="/"><img class="mb-4" src="https://uxwing.com/wp-content/themes/uxwing/download/07-design-and-development/bootstrap-4.png" alt="" width="72" height="72"></a>
+<a href="/"><img class="mb-4" src="https://lh3.googleusercontent.com/proxy/mGO0BVf2BOP5k8uvIYSEIG51eLdy6hLPGZ9AODU_RxZktP5AXBIk90-EXS0iBCUg2jQwWVseFv-U97OG2Y9n6_kTdacRPPf7rd_bcrj9tjQ" alt="" width="160" height="110"></a>
   <h1 class="h3 mb-3 font-weight-normal">USUARIO REGISTRADO</h1>
   <label for="inputEmail" class="sr-only">Email</label>
   <input name="correo" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>

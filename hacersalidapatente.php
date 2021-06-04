@@ -33,12 +33,35 @@
             echo "Patente: " . $unDato[0] ;
             $existe = "Si";
             $precio = calcularPrecio($unDato[1], $fechaActual, $precioMinuto);
-            
+            guardarEgreso($patente,$unDato[1],$precio);
         }
     }
 
     if($existe == "No")
     {
-        echo "La patente NO existe!";
+        echo "La patente NO ha ingresado!";
+    }
+    else
+    {
+        
+        borrarRegistro("patentes.txt");
+        
     }
      ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<input type="button" value="ENVIAR TICKET" id="guardar" onclick="validarForm()"><br><br>
+<table>
+<thead>
+    <th>Ingreso</th>   
+    <th>Salida</th>
+    <th>Tiempo</th>
+    <th>Precio</th>
+</thead>
+    <tbody id="tbody">
+    </tbody>
+    </table>
+<p id="parraMayores">Su numero de comprobante es: 
+
+</html>

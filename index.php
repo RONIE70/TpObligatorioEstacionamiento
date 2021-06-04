@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=auto" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -29,13 +30,26 @@
         font-size: 3.5rem;
       }
     }
+    .display-3{
+    font-family:'Oxygen', sans-serif;
+    font-size:4.2rem ;
+    padding: 30px 20px 30px 20px; 
+    margin:0 auto;
+    color: white;
+    border-radius: 10px;
+    border-width: 50px;
+    line-height: 80px;
+    text-shadow:5px 5px 5px rgb(134, 201, 240) ;
+    letter-spacing: 1px;
+    
+    }
   </style>
   <!-- Custom styles for this template -->
   <link href="jumbotron.css" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Estacionamiento Scorpions</a>
+    <a class="navbar-brand" href="#">•Estacionamiento Scorpions•</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -73,8 +87,9 @@
     <div class="jumbotron">
       <div class="container">
         <h1 class="display-3">Bienvenidos!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <p><li>En esta demo vamos a ver una aplicación basica para “Control de Estacionamiento”.</li><li> Esta nos sirve para poder controlar el tiempo, básicamente, que un auto está detenido dentro de nuestro estacionamiento.</li><li> Y por supuesto, nos permite cobrar por el servicio e imprimir el ticket.
+        <li>Esperamos les guste la idea!!</li></p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Mas Detalles &raquo;</a></p>
       </div>
     </div>
     <div class="container">
@@ -82,7 +97,16 @@
       <div class="row">
         <div class="col-md-4">
           <h2>Heading</h2>
-          <p>Will you do the same for me? It's time to face the music I'm no longer your muse. Heard it's beautiful, be the judge and my girls gonna take a vote. I can feel a phoenix inside of me. Heaven is jealous of our love, angels are crying from up above. Yeah, you take me to utopia.</p>
+            <li>"La única forma de hacer un trabajo excelente es haciendo lo que amas". Steve Jobs </li>
+            <li>"Puede que debas pelear una batalla más de una vez para ganarla". Margaret Thatcher </li>
+            <li>"Te conviertes en aquello en lo que crees". Oprah Winfrey </li>
+            <li>"La felicidad no es algo hecho. Viene de nuestras acciones". Dalai Lama </li>
+            <li>"Si ves a alguien sin una sonrisa, dale la tuya". Dolly Parton </li>
+            <li>"La vida es muy interesante... Al final, algunas de las cosas que más nos lastiman se convierten en nuestras mayores fortalezas". Drew Barrymore </li>
+            <li>"Si amas la vida, no pierdas el tiempo, ya que de tiempo está hecha la vida". Bruce Lee </li>
+            <li>"La vida es eso que te sucede mientras estás ocupado haciendo otros planes". John Lennon </li>
+            <li>"Con el tiempo, la fama se me va a escapar. Se escapa de todos y lo único que te queda al final es la posibilidad de mirar atrás y ver las decisiones que tomaste". Matt Damon </li>
+            <li>"Todos seguimos soñando y, por suerte, los sueños sí se hacen realidad". Katie Holmes </li>
           <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">

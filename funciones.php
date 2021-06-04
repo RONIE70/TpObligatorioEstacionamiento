@@ -36,3 +36,19 @@ function pantallaInfo($entro, $salio, $precio, $minutos)
     echo "<br>Tiempo estacionado en minutos: " . $minutos . "<br><h3>Total a abonar: <b>$" . $precio."</b><h3>";
 
 }
+
+function guardarEgreso($patente, $fechaSalio, $totalPagar)
+    {
+        $renglon = $patente."=>".$fechaSalio."=>".$totalPagar."\n";
+        $archivo = fopen("cobrados.txt", "a");
+        fwrite($archivo, $renglon);
+        fclose($archivo);
+    }
+
+    //crea nuevamente el archivo en blancos.
+    function borrarRegistro($patente){
+        $renglon = "\n".$patente. "=>" .date("Y-d-m H-i-s");
+        $archivo=fopen("patentes.txt", "w");
+        fwrite($archivo, "");
+        fclose($archivo);
+    }

@@ -37,7 +37,7 @@
   <body class="text-center">
     
 <form class="form-signin" action="hacerregistro.php" method="post">
-  <a href="/"><img class="mb-4" src="https://uxwing.com/wp-content/themes/uxwing/download/07-design-and-development/bootstrap-4.png" alt="" width="72" height="72"></a>
+  <a href="/"><img class="mb-4" src="https://image.flaticon.com/icons/png/512/753/753210.png" alt="" width="90" height="90"></a>
   <h1 class="h3 mb-3 font-weight-normal">REGISTRO DE USUARIO</h1>
   <label for="inputEmail" class="sr-only">Email</label>
   <input name="correo" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>

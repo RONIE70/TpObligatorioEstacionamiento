@@ -43,13 +43,37 @@
     .btn_send{
       background-color: cyan;
     }
-    
+  button
+     {
+    color: white;
+    font-size:15pt ;
+    border-radius: 5px;
+    margin: 8px 8px;
+    cursor: pointer;
+    padding:5px;
+    box-shadow: 0px 3px 3px  #fff;
+}
+#btnregistrar,#btncancelar{
+    width: 225px;
+    background-color: #1612e9;
+}
+    .my-0-font-weight-normal{
+    background-color: #1612e9;
+    color: white;
+    font-size:15pt ;
+    border-radius: 5px;
+    margin: 8px 8px;
+    cursor: pointer;
+    padding:5px;
+    box-shadow: 0px 3px 3px  #fff;
+    }
   </style>
+
   <!-- Custom styles for this template -->
   <link href="pricing.css" rel="stylesheet">
 </head>
 <body>
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Scorpions</h5>
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-2 text-dark" href="registro.php">Registro</a>
@@ -64,7 +88,7 @@
     <div class="card-deck mb-3 text-center">
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Precio Fracción</h4>
+          <h4 class="my-0-font-weight-normal">Precio Fracción</h4>
         </div>
         <div class="card-body">
           <h1 class="card-title pricing-card-title">$80<small class="text-muted">/ 15 min</small></h1>
@@ -72,7 +96,7 @@
       </div>
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Precio Hora</h4>
+          <h4 class="my-0-font-weight-normal">Precio Hora</h4>
         </div>
         <div class="card-body">
           <h1 class="card-title pricing-card-title">$280<small class="text-muted">/ 60 min</small></h1>
@@ -80,7 +104,7 @@
       </div>
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Precio Estadía</h4>
+          <h4 class="my-0-font-weight-normal">Precio Estadía</h4>
         </div>
         <div class="card-body">
           <h1 class="card-title pricing-card-title">$2200 <small class="text-muted">/ 12 hs</small></h1>
@@ -94,7 +118,7 @@
                 <h1>Entrar</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
-              <button type="submit" class="btn_send">Enviar</button>
+              <button id="btnregistrar" type="submit" class="btn_send">Enviar</button>
             </form>
           </div>
           <div class="col">
@@ -103,13 +127,15 @@
                 <h1>Salir</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
-              <button type="submit" class="btn_send">Enviar</button>
-            </form>
+              <button id="btnregistrar" type="submit" class="btn_send">Enviar</button>
+              </form>
           </div>
         </div>
       </div>
     </div>
     
+  
+   </body> 
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
       <div class="row">
