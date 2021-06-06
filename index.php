@@ -41,7 +41,6 @@
     line-height: 80px;
     text-shadow:5px 5px 5px rgb(134, 201, 240) ;
     letter-spacing: 1px;
-    
     }
   </style>
   <!-- Custom styles for this template -->

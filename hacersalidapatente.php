@@ -6,24 +6,13 @@
     $precioMinuto = 6;
     date_default_timezone_set("America/Argentina/Buenos_Aires");
     $fechaActual = date("Y-d-m H-i-s");
-    $listadoDePatentes = array();
+    /*$listadoDePatentes = array();*/
+    
 
-    $archivo = fopen("patentes.txt", "r");
-
-    while(!feof($archivo))
-    {
-        $renglon = fgets($archivo);
-        $datosDeUnaPatente = explode("=>", $renglon);
-
-        if(isset($datosDeUnaPatente[1]))
-        {
-            $listadoDePatentes[] = $datosDeUnaPatente;
-        }
-
-    }
-
-    fclose($archivo);
-
+    $archivoEntrada = "estacionados.txt";
+    $listadoDePatentes = leerEntrada($archivoEntrada);
+    
+    
     $existe = "No";
 
     foreach($listadoDePatentes as $unDato)
@@ -41,12 +30,11 @@
     {
         echo "La patente NO ha ingresado!";
     }
-    else
+    /*else
     {
         
         borrarRegistro("patentes.txt");
-        
-    }
+    }*/
      ?>
 
 <!DOCTYPE html>
@@ -62,6 +50,6 @@
     <tbody id="tbody">
     </tbody>
     </table>
-<p id="parraMayores">Su numero de comprobante es: 
+
 
 </html>
