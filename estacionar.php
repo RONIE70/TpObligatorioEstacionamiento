@@ -11,7 +11,8 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">-->
   <?php
     include_once ('titulo.php');
-
+    include_once ("estacionamiento.php");
+    estacionamiento::CrearTablaEstacionados();
     ?>
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -129,12 +130,13 @@
               </div>
               <button id="btnregistrar" type="submit" class="btn_send">Enviar</button>
               </form>
+             <?php include ('ultimoTicket.php'); ?>
           </div>
         </div>
       </div>
     </div>
+    <?php include ('tablaEstacionados.php'); ?>
     
-  
    </body> 
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
