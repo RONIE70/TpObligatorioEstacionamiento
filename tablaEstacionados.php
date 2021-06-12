@@ -1,1 +1,1 @@
-<h4>Estacionados</h4><table border=1><th>patente</th><th>Ingreso</th><tr><td>EEE555</td><td>2021-11-06 21:13:21EEE555</td></tr></table>
+<h4>ESTACIONADOS</h4><table border=1><th>PATENTE</th><th>INGRESO</th></table>

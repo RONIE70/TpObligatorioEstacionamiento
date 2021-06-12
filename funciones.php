@@ -90,9 +90,8 @@ function calcularPrecio($fechaEntro, $fechaSalio,$patente)
 
    // actualizaEstacionados($patente, $fechaEntro);
     //pantallaInfo($fechaEntro, $fechaSalio, $precio, $minutos,$patente);
-    
-
 }
+
 
 function pantallaInfo($entro, $salio, $precio, $minutos,$patente)
 {
@@ -100,11 +99,11 @@ function pantallaInfo($entro, $salio, $precio, $minutos,$patente)
     $archivoTicket = fopen ("ultimoTicket.php","w");
    if($entro=="")
    {
-    $textoTicket="<h4> LA PATENTE $patente no existe</h4>";
+    $textoTicket="<h4> LA PATENTE $patente NO EXISTE</h4>";
    }
    else
    {
-   $textoTicket = "<br><h3>Patente: $patente </h3> Fecha de Ingreso: $entro <br>Fecha de Egreso : $salio<br>Tiempo estacionado en minutos: $minutos <br><h3>Total a abonar: <b>\$ $precio</b><h3>";
+   $textoTicket = "<br><h3>PATENTE: $patente </h3> Fecha de Ingreso: $entro <br>Fecha de Egreso : $salio<br>Tiempo estacionado en minutos: $minutos <br><h3>Total a abonar: <b>\$ $precio</b><h3>";
     
    }
     fwrite($archivoTicket, $textoTicket);
