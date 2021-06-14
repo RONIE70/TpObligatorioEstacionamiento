@@ -23,7 +23,7 @@
         fclose($archivo);
     } else
     {
-        echo "ERROR en clave";
+        header('Location:error.php');
     }
 
 

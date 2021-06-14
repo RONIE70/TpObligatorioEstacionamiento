@@ -20,7 +20,7 @@
     } 
     else
     {
-        echo "ERROR, se debe ingresar una patente";
+        header ("location:error.php");
     }
 
 ?>

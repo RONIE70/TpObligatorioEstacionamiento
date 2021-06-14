@@ -29,14 +29,37 @@
           font-size: 3.5rem;
         }
       }
+
+      #nav{
+      position: relative;
+      top: -200px;
+      width: 200%;
+      left:2px;
+    }
+
+    #form{
+      position: relative;
+      top: 60px;
+      left: -300px;
+    }
     </style>
     
     <!-- Custom styles for this template -->
+    <div>
+    <div id="nav" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Scorpions</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="btn btn-outline-primary" href="index.php">Pagina Principal</a>
+      <a class="btn btn-outline-primary" href="login.php">Login</a>
+</nav>
+    <!--<a class="btn btn-outline-primary" href="login.php">Login</a>-->
+  </div>
+</div>
     <link href="signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
     
-<form class="form-signin" action="hacerregistro.php" method="post">
+<form id="form" class="form-signin" action="hacerregistro.php" method="post">
   <a href="/"><img class="mb-4" src="https://image.flaticon.com/icons/png/512/753/753210.png" alt="" width="90" height="90"></a>
   <h1 class="h3 mb-3 font-weight-normal">REGISTRO DE USUARIO</h1>
   <label for="inputEmail" class="sr-only">Email</label>

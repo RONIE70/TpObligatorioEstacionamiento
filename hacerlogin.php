@@ -53,7 +53,7 @@
         {
             if($datos[1] == $clave)
             {
-                echo "Bienvenido";
+                header('Location:estacionar.php');
                 $ingreso = "Ingreso";
             }
         }

@@ -8,6 +8,7 @@
     <meta name="generator" content="Hugo 0.80.0">
     <!--<title>Login · Estacionamiento Scorpions</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/sign-in/">-->
+
     <?php
     include_once ('titulo.php');
 
@@ -29,22 +30,72 @@
           font-size: 3.5rem;
         }
       }
+      .form-pat {
+      text-align: center;
+      margin: 0 auto;
+      width: 80%;
+    }
+    .my-0-font-weight-normal{
+    background-color: #1612e9;
+    color: white;
+    font-size:15pt ;
+    border-radius: 5px;
+    margin: 8px 8px;
+    cursor: pointer;
+    padding:5px;
+    box-shadow: 0px 3px 3px  #fff;
+    }
+
+     button
+     {
+    color: white;
+    font-size:15pt ;
+    border-radius: 5px;
+    margin: 8px 8px;
+    cursor: pointer;
+    padding:5px;
+    box-shadow: 0px 3px 3px  #fff;
+    }
+
+    #nav{
+      position: relative;
+      top: -200px;
+      width: 200%;
+      left:2px;
+    }
+
+    #form{
+      position: relative;
+      top: 60px;
+      left: -300px;
+    }
     </style>
     
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    ><link href="signin.css" rel="stylesheet">
+    <div>
+    <div id="nav" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Scorpions</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="btn btn-outline-primary" href="index.php">Pagina Principal</a>
+      <a class="btn btn-outline-primary" href="registro.php">Registro</a>
+</nav>
+    <!--<a class="btn btn-outline-primary" href="login.php">Login</a>-->
+  </div>
+</div>
   </head>
-  <body class="text-center">
+  
+<body class="text-center">
     
-<form class="form-signin" action="hacerlogin.php" method="post">
-<a href="/"><img class="mb-4" src="https://lh3.googleusercontent.com/proxy/mGO0BVf2BOP5k8uvIYSEIG51eLdy6hLPGZ9AODU_RxZktP5AXBIk90-EXS0iBCUg2jQwWVseFv-U97OG2Y9n6_kTdacRPPf7rd_bcrj9tjQ" alt="" width="160" height="110"></a>
+<form id="form"class="form-signin" action="hacerlogin.php" method="post">
+<a href="/"><img class="mb-4" src="https://cdn4.vectorstock.com/i/1000x1000/06/78/login-icon-in-trendy-flat-style-vector-19920678.jpg" alt="" width="150" height="110"></a>
   <h1 class="h3 mb-3 font-weight-normal">USUARIO REGISTRADO</h1>
   <label for="inputEmail" class="sr-only">Email</label>
   <input name="correo" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
   <label for="inputPassword" class="sr-only">Contraseña</label>
   <input name="pass" type="password" id="inputEmail" class="form-control" placeholder="Password" required autofocus>
   <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
+  <p class="mt-5 mb-3 text-muted">&copy; ScorpionsApp S.A. 2021</p>
 </form>
     
   </body>
