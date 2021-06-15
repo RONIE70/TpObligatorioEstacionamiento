@@ -1,1 +1,1 @@
-<br><h3>PATENTE: PFA172 </h3> Fecha de Ingreso: 2021-13-06 22:47:27 <br>Fecha de Egreso : 2021-13-06 22:47:35<br>Tiempo estacionado en minutos: 0 <br><h3>Total a abonar: <b>$ 0</b><h3>
+<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: DRA226 </h3> Fecha de Ingreso: 2021-15-06 01:21:04 <br>Fecha de Egreso : 2021-15-06 01:23:44<br>Tiempo estacionado en minutos: 6 <br><h3>Total a abonar: <b>$ 6</b><h3>

@@ -1,1 +1,1 @@
-<h4>ESTACIONADOS</h4><table border=1><th>PATENTE</th><th>INGRESO</th></table>
+<h4>ESTACIONADOS</h4><table border=2><th>PATENTE</th><th>FECHA/HORA INGRESO</th></table>

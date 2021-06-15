@@ -42,20 +42,3 @@
     }
     //pantallaInfo($fechaEntro, $fechaSalio, $precio, $minutos,$patente);
      ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<input type="button" value="ENVIAR TICKET" id="guardar" onclick="validarForm()"><br><br>
-<table>
-<thead>
-    <th>Ingreso</th>   
-    <th>Salida</th>
-    <th>Tiempo</th>
-    <th>Precio</th>
-</thead>
-    <tbody id="tbody">
-    </tbody>
-    </table>
-
-
-</html>

@@ -20,12 +20,12 @@ class estacionamiento
 	{
 		$listado=estacionamiento::leer();
 
-		$tablaHTML="<h4>ESTACIONADOS</h4><table border=1>";
+		$tablaHTML="<h4>ESTACIONADOS</h4><table border=2>";
 		$tablaHTML.="<th>";
 		$tablaHTML.="PATENTE";
 		$tablaHTML.="</th>";
 		$tablaHTML.="<th>";
-		$tablaHTML.="INGRESO";
+		$tablaHTML.="FECHA/HORA INGRESO";
 		$tablaHTML.="</th>";
 		
 		foreach($listado as $dato)      //</td><td>$auto[1]

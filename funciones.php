@@ -35,10 +35,10 @@ function guardarArchivoCobrados($renglon, $archivoCobrados)
     fclose($archivo);
 }
 
-function guardarEgreso($patente, $fechaSalio, $precio)
+function guardarEgreso($patente,$fechaAnterior,$fechaActual,$precio)
     {
         $archivoCobrados = "cobrados.txt";
-        $renglon = "\n".$patente."=>".$fechaSalio."=>".$precio;
+        $renglon = "\n".$patente."=>".$fechaAnterior."=>".$fechaActual."=>".$precio;
         guardarArchivoCobrados($renglon, $archivoCobrados);
         
     }
@@ -103,7 +103,7 @@ function pantallaInfo($entro, $salio, $precio, $minutos,$patente)
    }
    else
    {
-   $textoTicket = "<br><h3>PATENTE: $patente </h3> Fecha de Ingreso: $entro <br>Fecha de Egreso : $salio<br>Tiempo estacionado en minutos: $minutos <br><h3>Total a abonar: <b>\$ $precio</b><h3>";
+   $textoTicket = "<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: $patente </h3> Fecha de Ingreso: $entro <br>Fecha de Egreso : $salio<br>Tiempo estacionado en minutos: $minutos <br><h3>Total a abonar: <b>\$ $precio</b><h3>";
     
    }
     fwrite($archivoTicket, $textoTicket);

@@ -35,8 +35,10 @@
       margin: 0 auto;
       width: 80%;
     }
-    .form-group {
+    .form-group2,#ticketver {
       color:red;
+      font-border:black 2px;
+
     }
     .form-group1{
       color:green;
@@ -60,7 +62,8 @@
 }
     .my-0-font-weight-normal{
     background-color: #1612e9;
-    color: white;
+    color: rgb(247, 38, 38);
+    height: 30px;
     font-size:15pt ;
     border-radius: 5px;
     margin: 8px 8px;
@@ -68,14 +71,83 @@
     padding:5px;
     box-shadow: 0px 3px 3px  #fff;
     }
+
+    #body{
+      background-color: rgb(228, 228, 228);
+    }
+
+    #tablestop{
+      padding:5px;
+      color:rgb(2, 8, 100);
+      left: 65px;
+      position: relative;
+      top:25px;
+      box-shadow: black 1px 1px 4px 2px;
+      width: 300px;
+
+    }
+
+    #pres{
+    font-family:'Oxygen', sans-serif;
+    font-size: 1rem ;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    border-width: 20px;
+    line-height: 35px;
+    text-shadow:5px 5px 5px rgb(134, 201, 240) ;
+    letter-spacing: 1px;
+    background-color: rgb(41, 145, 243);
+    }
+
+    .display-4{
+      font-size: 2.5rem;
+      font-family:'Oxygen', sans-serif;
+      position: relative;
+      top:-30px;
+    }
+
+    #lead{
+      position: relative;
+      top:-45px;
+    }
+
+    .card-body{
+      height: 10px;
+    }
+
+    .card-title-pricing-card-title{
+      font-size:2rem;
+      position: relative;
+      top:-19px;
+    }
+
+    .row {
+      position: relative;
+      top:20px;
+    }
+
+    #precio{
+      position: relative;
+      top:-42px;
+    }
+
+    #ticketver{
+      box-shadow: black 1px 1px 4px 2px;
+      padding: 0px 3px 5px 5px;
+      width: 300px;
+      position: relative;
+      right:-72px;
+      top:20px;
+    }
   </style>
 
   <!-- Custom styles for this template -->
   <link href="pricing.css" rel="stylesheet">
 </head>
-<body>
+<body id="body">
      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Scorpions</h5>
+    <h4 class="my-0 mr-md-auto font-weight-normal">Estacionamiento ScorpionsApp</h4>
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="btn btn-outline-primary" href="index.php">Pagina Principal</a>
       <a class="btn btn-outline-primary" href="registro.php">Registro</a>
@@ -83,18 +155,23 @@
     </nav>
     <a class="btn btn-outline-primary" href="login.php">Login</a>
   </div>
+  <div id="pres">
+  <p>REGISTRO DE ENTRADAS Y SALIDAS DE VEHICULOS </p>
+  </div>
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">Estacionamiento Scorpions</h1>
-    <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+    <h2 class="display-4">Estacionamiento ScorpionsApp</h2>
+    <div id="lead">
+    <p><li>En esta pantalla el usuario podra ingresar/egresar la patente del cliente</li><li> Se visualiza un listado de los vehiculos estacionados con su hora de ingreso</li><li>Cuando el vehiculo egresa obtendra automaticamente el importe a cobrar</li> </p>
+  </div>
   </div>
   <div class="container">
-    <div class="card-deck mb-3 text-center">
+    <div id="precio" class="card-deck mb-3 text-center">
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
           <h4 class="my-0-font-weight-normal">Precio Fracción</h4>
         </div>
         <div class="card-body">
-          <h1 class="card-title pricing-card-title">$80<small class="text-muted">/ 15 min</small></h1>
+          <h1 class="card-title-pricing-card-title">$80<small class="text-muted">/ 15 min</small></h1>
         </div>
       </div>
       <div class="card mb-4 shadow-sm">
@@ -102,7 +179,7 @@
           <h4 class="my-0-font-weight-normal">Precio Hora</h4>
         </div>
         <div class="card-body">
-          <h1 class="card-title pricing-card-title">$280<small class="text-muted">/ 60 min</small></h1>
+          <h1 class="card-title-pricing-card-title">$280<small class="text-muted">/ 60 min</small></h1>
         </div>
       </div>
       <div class="card mb-4 shadow-sm">
@@ -110,7 +187,7 @@
           <h4 class="my-0-font-weight-normal">Precio Estadía</h4>
         </div>
         <div class="card-body">
-          <h1 class="card-title pricing-card-title">$2200 <small class="text-muted">/ 12 hs</small></h1>
+          <h1 class="card-title-pricing-card-title">$2200 <small class="text-muted">/ 12 hs</small></h1>
         </div>
       </div>
       <div class="container">
@@ -118,36 +195,41 @@
           <div class="col">
             <form action="hacerentradapatente.php" method="post">
               <div class="form-group1">
-                <h1>Entrar</h1>
+                <h1>ENTRADA</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Enviar</button>
+              <button id="btnregistrar" type="submit" class="btn_send">Estacionar</button>
+              <div id="tablestop">
+              <?php include ('tablaEstacionados.php'); ?>
+            </div>
             </form>
           </div>
           <div class="col">
           <form action="hacersalidapatente.php" method="post">
-              <div class="form-group">
-                <h1>Salir</h1>
+              <div class="form-group2">
+                <h1>SALIDA</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Enviar</button>
-              </form>
+              <button id="btnregistrar" type="submit" class="btn_send">Cobrar</button>
+              </form> 
+              <div id="ticketver">
              <?php include ('ultimoTicket.php'); ?>
+             </div>
           </div>
         </div>
       </div>
     </div>
-    <?php include ('tablaEstacionados.php'); ?>
+    
     
    </body> 
 
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
       <div class="row">
         <div class="col-12 col-md">
-          <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
+          <small class="d-block mb-3 text-muted">&copy; EscorpionsApp 2021</small>
         </div>
         <div class="col-6 col-md">
-          <h5>Features</h5>
+          <!--<h5>Features</h5>
           <ul class="list-unstyled text-small">
             <li><a class="text-muted" href="#">Cool stuff</a></li>
             <li><a class="text-muted" href="#">Stuff for developers</a></li>
@@ -167,7 +249,7 @@
             <li><a class="text-muted" href="#">Terms</a></li>
           </ul>
         </div>
-      </div>
+      </div>-->
     </footer>
   </div>
 </body>
