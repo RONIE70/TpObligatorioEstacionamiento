@@ -1,49 +1,42 @@
 <?php
 
-function horaObtenida($fecha)
-{
-    $datos = explode(" ", $fecha);/*explode — Divide un string en varios string*/
-
-    /*isset — Determina si una variable está definida y no es null*/
-   if (isset($datos[1])) {
-       $datos[1] = str_replace('-', ':', $datos[1]); /*str_replace — Reemplaza todas las apariciones del string buscado con el string de reemplazo*/
-  }
-    return $datos[1];
+function GuardarArchivo ($nombreArchivo,$renglon){
+	$archivo=fopen($nombreArchivo, "a");
+	fwrite($archivo,$renglon);
+	fclose($archivo);
 }
 
+function leerEntrada ($nombreArchivo,$separador){
+	$archivo = fopen ($nombreArchivo, "r");
+	$arrayDeRetorno = array();
+	while (!feof($archivo)) {
+		$renglon = fgets($archivo);
 
-function ingresarPatente($patente, $fechactual)
-    {
-        $archivoEstacionados="estacionados.txt";
-        $renglon = "\n".$patente. "=>" .$fechactual;
-        guardarArchivoEstacionados($renglon, $archivoEstacionados); /*llama a l f que guarda en estacionados.txt*/
-    } 
-    
-    
-function guardarArchivoEstacionados($renglon, $archivoEstacionados)
-{
-    $archivo = fopen($archivoEstacionados, "a"); /* agrega al archivo los estacionados*/
-    fwrite($archivo, $renglon);
-    fclose($archivo);
+		$registro = explode($separador,$renglon,);
+		
+		if (isset($registro[1])){
+			$arrayDeRetorno[] = $registro;
+		}
+
+	}
+	fclose($archivo);
+	
+	return $arrayDeRetorno;
 }
 
-
-function guardarArchivoCobrados($renglon, $archivoCobrados)
+function CalcularTotales($nombreArchivo)
 {
-    $archivo = fopen($archivoCobrados, "a");
-    fwrite($archivo, $renglon);
-    fclose($archivo);
+	$listadoDeCobrados =  leerEntrada ($nombreArchivo,"=>");
+	$totales = 0;
+
+	foreach ($listadoDeCobrados as $dato) {
+		$totales +=$dato[3];
+	}
+	return $totales;
 }
 
-function guardarEgreso($patente,$fechaAnterior,$fechaActual,$precio)
-    {
-        $archivoCobrados = "cobrados.txt";
-        $renglon = "\n".$patente."=>".$fechaAnterior."=>".$fechaActual."=>".$precio;
-        guardarArchivoCobrados($renglon, $archivoCobrados);
-        
-    }
-
-
+ /**************************/
+ 
 function tiempoEnMinutos($fechainicio, $fechafinal)
 {
     $minutos = (strtotime($fechainicio) - strtotime($fechafinal)) / 60;/*Convierte una descripción de fecha/hora textual en Inglés a una fecha Unix*/
@@ -61,11 +54,8 @@ $timestamp = strtotime(str_replace('/', '-', '27/05/1990'));
 
 function calcularPrecio($fechaEntro, $fechaSalio,$patente)
 {
-    
-    $horaEntrada = horaObtenida($fechaEntro);
-    $horaSalida = horaObtenida($fechaSalio);
+    $minutos = tiempoEnMinutos($fechaEntro, $fechaSalio);
 
-    $minutos = tiempoEnMinutos($horaEntrada, $horaSalida);
     $precioMinuto=3; //hora=180
     $precioHora=2; //hora=120
     $precioEstadia=1; // hora
@@ -76,7 +66,7 @@ function calcularPrecio($fechaEntro, $fechaSalio,$patente)
     }
     else
     {
-        if($minutos > 60 && $minutos < 720)
+        if($minutos <= 720)
         {
         $precio = $minutos * $precioHora;
         }
@@ -99,45 +89,25 @@ function pantallaInfo($entro, $salio, $precio, $minutos,$patente)
     $archivoTicket = fopen ("ultimoTicket.php","w");
    if($entro=="")
    {
-    $textoTicket="<h4> LA PATENTE $patente NO EXISTE</h4>";
+    $textoTicket="<h4> LA PATENTE $patente <br>NO EXISTE</h4>";
    }
    else
    {
    $textoTicket = "<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: $patente </h3> Fecha de Ingreso: $entro <br>Fecha de Egreso : $salio<br>Tiempo estacionado en minutos: $minutos <br><h3>Total a abonar: <b>\$ $precio</b><h3>";
-    
    }
     fwrite($archivoTicket, $textoTicket);
     fclose($archivoTicket);
-
 }
 
+/*** NO SE PARA QUE ESTA FUNCION */
+ function actualizaEstacionados($patente, $fechaAnterior)
+{
+    $renglon = "\n".$patente. "=>".$fechaAnterior;
+    $listadoDePatentes = file_get_contents("estacionados.txt");
+    $listadoDePatentes = str_replace($renglon, '', $listadoDePatentes);
+    file_put_contents("estacionados.txt", $listadoDePatentes);
+}
+/* ----- */
 
-    function leerEntrada($archivoEntrada)
-    {
-        $listadoDePatentes = array();
-
-        $archivo = fopen($archivoEntrada, "r");
-        
-        while(!feof($archivo))
-        {
-            $renglon = fgets($archivo);
-            $datosDeUnaPatente = explode("=>", $renglon);
-
-            if(isset($datosDeUnaPatente[1]))
-            {
-                $listadoDePatentes[] = $datosDeUnaPatente;
-            }
-        }
-        fclose($archivo);
-        return $listadoDePatentes;
-    }
-
-     function actualizaEstacionados($patente, $fechaAnterior)
-    {
-        $renglon = "\n".$patente. "=>".$fechaAnterior;
-        $listadoDePatentes = file_get_contents("estacionados.txt");
-        $listadoDePatentes = str_replace($renglon, '', $listadoDePatentes);
-        file_put_contents("estacionados.txt", $listadoDePatentes);
-    }
-    
-    ?>
+ date_default_timezone_set("America/Argentina/Buenos_Aires");
+?>

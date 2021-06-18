@@ -21,4 +21,28 @@ header("Content-Type: application/force-download");
 header("Content-Disposition: attachment; filename=archivo.csv");
 echo $renglones;
 
+
+include "funciones.php";
+
+function generarCobrados() {
+		$arrayCobrados=leerEntrada ("cobrados.txt","=>")
+		$renglon="";
+		foreach ($arrayCobradosl as $datos){
+			$renglon.=$datos[0].";".$datos[1].";".$datos[2];
+		}
+		creaArchivocsv("cobrados",$renglon);
+}
+
+function crearArchivocsv($archivoCobrados,$valores){
+	header("Content-Description: File Transfer");
+	header("Content-Type: application/force-download");
+	header("Content-Disposition: attachment; filename=" . $nombreArchivo. ".csv");
+	echo $valores;
+}
+
+generarEstacionados();
+
+
+
+
 ?>

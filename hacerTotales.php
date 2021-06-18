@@ -1,21 +1,7 @@
-<!doctype html>
-<html lang="en">
+<?php
+include "funciones.php";
+?>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Hugo 0.80.0">
-  <!--<title>Estacionar - Estacionamiento Scorpions</title>
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">-->
-  <?php
-    include_once ('titulo.php');
-    include_once ("estacionamiento.php");
-    estacionamiento::CrearTablaEstacionados("estacionados");
-    //estacionamiento::CrearTablaEstacionados("cobrados");
-   
-    ?>
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <style>
@@ -109,13 +95,6 @@
       top:-30px;
     }
 
-    .display-5{
-      font-size: 1rem;
-      font-family:'Oxygen', sans-serif;
-      position: relative;
-      top:-30px;
-    }
-
     #lead{
       position: relative;
       top:-45px;
@@ -149,12 +128,6 @@
       right:-72px;
       top:20px;
     }
-
-    #btnContable{
-      position: relative;
-      right:-5px;
-      top:40px;
-    }
   </style>
 
   <!-- Custom styles for this template -->
@@ -165,31 +138,35 @@
     <h4 class="my-0 mr-md-auto font-weight-normal">Estacionamiento ScorpionsApp</h4>
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="btn btn-outline-primary" href="index.php">Pagina Principal</a>
-      <a class="btn btn-outline-primary" href="registro.php">Registro</a>
-
+      <a class="btn btn-outline-primary" href="hacerContable.php">Informe Contable</a>
     </nav>
-    <a class="btn btn-outline-primary" href="login.php">Login</a>
+    <!--<a class="btn btn-outline-primary" href="login.php">Login</a>-->
   </div>
   <div id="pres">
-  <p>REGISTRO DE ENTRADAS Y SALIDAS DE VEHICULOS </p>
+  <p>TOTAL RECAUDADO HASTA EL MOMENTO</p>
   </div>
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h2 class="display-4">Estacionamiento ScorpionsApp</h2>
     <div id="lead">
-    <p><li>En esta pantalla el usuario podra ingresar/egresar la patente del cliente</li><li> Se visualiza un listado de los vehiculos estacionados con su hora de ingreso</li><li>Cuando el vehiculo egresa obtendra automaticamente el importe a cobrar</li> </p>
+    <p><li> En esta pantalla el usuario podra visualizar el total recaudado hasta el momento</li></p>
   </div>
   </div>
   <div class="container">
     <div id="precio" class="card-deck mb-3 text-center">
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
-          <h4 class="my-0-font-weight-normal">Precio Fracción</h4>
+          <h4 class="my-0-font-weight-normal">TOTAL DE TICKETS EMITIDOS</h4>
         </div>
         <div class="card-body">
-          <h1 class="card-title-pricing-card-title">$80<small class="text-muted">/ 15 min</small></h1>
+          <h1 class="card-title-pricing-card-title">Verificación<small class="text-muted">/CAJA</small></h1>
+          <button id="btnregistrar" type="submit" class="btn_send">Total Recaudado</button> -->
+              <?php
+              $total=CalcularTotales("cobrados.txt");
+              echo "Caja $ ".$total;
+              ?>
         </div>
       </div>
-      <div class="card mb-4 shadow-sm">
+      <!--<div class="card mb-4 shadow-sm">
         <div class="card-header">
           <h4 class="my-0-font-weight-normal">Precio Hora</h4>
         </div>
@@ -219,26 +196,8 @@
               </select>
               </div>
               <button id="btnregistrar" type="submit" class="btn_send">Estacionar</button>
-              <div class="text-center">
-        <form action="hacerentradapatente.php" method="post" name="formulario">
-          <p><li class="display-5">TIPO DE COMBUSTIBLE</p></li>
-
-          <div class="combustible">
-            <div>
-              <input type="radio" name="combustible" value="GNC" required>
-              <label for="gnc">GNC</label>
-            </div>
-            <div>
-              <input type="radio" name="combustible" value="NAFTA">
-              <label for="nafta">NAFTA</label>
-            </div>
-            <div>
-              <input type="radio" name="combustible" value="DIESEL">
-              <label for="diesel">DIESEL</label>
-            </div>
-          </div>
               <div id="tablestop">
-              <?php include ('tablaestacionados.php'); ?>
+              <1?php include ('tablaestacionados.php'); ?>
             </div>
             </form>
           </div>
@@ -249,26 +208,25 @@
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
               <button id="btnregistrar" type="submit" class="btn_send">Cobrar</button>
-              <!--<div id="tablestop">
-              <!?php include ('tablacobrados.php'); ?>
-            </div>-->
+              <div id="tablestop">
+              <1?php include ('tablacobrados.php'); ?>
+            </div>
               </form> 
               <div id="ticketver">
-             <?php include ('ultimoTicket.php'); ?>
+             <1?php include ('ultimoTicket.php'); ?>
             </div>
-            <div id= "btnContable">
-            <form action="hacerContable.php" method="post">
+            <form action="hacerTotales.php" method="post">
               <div class="form-group2">
-               
+                <h1>total $</h1>
                 </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Informe Contable</button>
-              </div>
+              <button id="btnregistrar" type="submit" class="btn_send">Total Recaudado</button>
+              
               </div>
             </form> 
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
     
     
    </body> 

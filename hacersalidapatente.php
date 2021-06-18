@@ -1,44 +1,65 @@
 <?php
+if (isset($_POST["patente"])){
+	$patente = $_POST["patente"];
+}
+else
+{
+	die();
+}
 
-    //include_once "estacionamiento.php";
-    include_once ('funciones.php');
 
-    $patente = $_POST['patente'];
-    
-    date_default_timezone_set("America/Argentina/Buenos_Aires");
-    $fechaActual = date("Y-d-m H:i:s");
-    /*$listadoDePatentes = array();*/
-   
-    
 
-    $archivoEntrada = "estacionados.txt";
-    $listadoDePatentes = leerEntrada($archivoEntrada);//lee los registros de los vehículos estacionados
-    
-    $existe = "No";
+include "funciones.php";
 
-    foreach($listadoDePatentes as $unDato)
-    {
-        if($unDato[0] == $patente)
-        {
-            echo "Patente: " . $unDato[0] ;
-            $existe = "Si";
-            $fechaAnterior=$unDato[1];
-            $precio = calcularPrecio($fechaAnterior, $fechaActual,$unDato[0]);
-            $minutos=$precio;
-            guardarEgreso($patente,$fechaAnterior,$fechaActual,$precio);
-            
-            pantallaInfo($fechaAnterior, $fechaActual, $precio,$minutos,$unDato[0]);
-            //estacionamiento::CrearTablaEstacionados();
-            actualizaEstacionados($patente, $fechaAnterior);
-            header ("Location: estacionar.php");
-        }
-    }
+$listadoDePatente = leerEntrada ("estacionados.txt","=>");
+$encontrado="N";
 
-    if($existe == "No")
-    {
+foreach ($listadoDePatente as $dato) {
+	if($dato[0]==$patente){
+		$encontrado="S";
+
+		$fechaEntrada=$dato[1];
+		$fechaSalida=date ("Y-m-d H:i:s");
+		$minutos = tiempoEnMinutos($fechaEntrada, $fechaSalida);
+		$precio=calcularPrecio($fechaEntrada, $fechaSalida,$patente);
+
+		$renglon="\n".$patente."=>".$fechaEntrada."=>".$fechaSalida."=>".$precio;
+		GuardarArchivo ("cobrados.txt",$renglon);
+		pantallaInfo($fechaEntrada, $fechaSalida, $precio,$minutos,$dato[0]);
+		break;
+	}
+}
+
+if($encontrado=="N")
+{
         //echo "La patente NO ha ingresado!";
         pantallaInfo("","","","",$patente);
         header ("Location: estacionar.php");
-    }
-    //pantallaInfo($fechaEntro, $fechaSalio, $precio, $minutos,$patente);
-     ?>
+    
+}
+else
+{
+	$archivo=fopen("estacionados.txt", "w");
+	foreach ($listadoDePatente as $dato) {
+		if($dato[0]!=$patente){
+			
+			$fechaEntrada=$dato[1];
+			
+			$renglon="\n".$dato[0]."=>".$fechaEntrada."=>".$dato[2]."=>"."x";
+			fwrite($archivo,$renglon);
+			
+		}
+
+	}
+	fclose($archivo);
+	header ("Location: estacionar.php");
+
+
+}
+
+
+
+
+
+
+?>

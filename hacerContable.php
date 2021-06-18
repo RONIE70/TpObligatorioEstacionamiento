@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -13,7 +14,7 @@
     include_once ('titulo.php');
     include_once ("estacionamiento.php");
     estacionamiento::CrearTablaEstacionados("estacionados");
-    //estacionamiento::CrearTablaEstacionados("cobrados");
+    estacionamiento::CrearTablaEstacionados("cobrados");
    
     ?>
   <!-- Bootstrap core CSS -->
@@ -89,6 +90,18 @@
 
     }
 
+    #tablestop2{
+      padding:5px;
+      color:rgb(2, 8, 100);
+      left: 10px;
+      position: relative;
+      top:25px;
+      box-shadow: black 1px 1px 4px 2px;
+      width: 450px;
+      text-align: center;
+
+    }
+
     #pres{
     font-family:'Oxygen', sans-serif;
     font-size: 1rem ;
@@ -104,13 +117,6 @@
 
     .display-4{
       font-size: 2.5rem;
-      font-family:'Oxygen', sans-serif;
-      position: relative;
-      top:-30px;
-    }
-
-    .display-5{
-      font-size: 1rem;
       font-family:'Oxygen', sans-serif;
       position: relative;
       top:-30px;
@@ -149,12 +155,6 @@
       right:-72px;
       top:20px;
     }
-
-    #btnContable{
-      position: relative;
-      right:-5px;
-      top:40px;
-    }
   </style>
 
   <!-- Custom styles for this template -->
@@ -165,33 +165,46 @@
     <h4 class="my-0 mr-md-auto font-weight-normal">Estacionamiento ScorpionsApp</h4>
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="btn btn-outline-primary" href="index.php">Pagina Principal</a>
-      <a class="btn btn-outline-primary" href="registro.php">Registro</a>
+      <a class="btn btn-outline-primary" href="estacionar.php">Estacionar</a>
 
     </nav>
-    <a class="btn btn-outline-primary" href="login.php">Login</a>
+    <!--<a class="btn btn-outline-primary" href="login.php">Login</a>-->
   </div>
   <div id="pres">
-  <p>REGISTRO DE ENTRADAS Y SALIDAS DE VEHICULOS </p>
+  <p>SISTEMA DE ADMINISTRACION CONTABLE - FACTURACION </p>
   </div>
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h2 class="display-4">Estacionamiento ScorpionsApp</h2>
     <div id="lead">
-    <p><li>En esta pantalla el usuario podra ingresar/egresar la patente del cliente</li><li> Se visualiza un listado de los vehiculos estacionados con su hora de ingreso</li><li>Cuando el vehiculo egresa obtendra automaticamente el importe a cobrar</li> </p>
+    <p><li>En esta pantalla el usuario podra ingresar/egresar la patente del cliente</li><li> Se visualiza 1 listado de los vehiculos estacionados con su hora de ingreso</li><li>Otro listado de vehiculos egresados con el importe cobrado en cada caso</li> </p>
   </div>
   </div>
   <div class="container">
     <div id="precio" class="card-deck mb-3 text-center">
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
-          <h4 class="my-0-font-weight-normal">Precio Fracción</h4>
+          <h4 class="my-0-font-weight-normal"></h4>
+          <form action="hacerTotales.php" method="post">
+              <div class="form-group2">
+               <h4>TOTALES</h4>
+                </div>
+              <button id="btnregistrar" type="submit" class="btn_send">Total Recaudado</button>
+              
+              </div>
+            </form> 
         </div>
         <div class="card-body">
-          <h1 class="card-title-pricing-card-title">$80<small class="text-muted">/ 15 min</small></h1>
+          <!--<h1 class="card-title-pricing-card-title">$80<small class="text-muted">/ 15 min</small></h1>-->
+         
+              
+              </div>
+            </form> 
+              
         </div>
       </div>
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
-          <h4 class="my-0-font-weight-normal">Precio Hora</h4>
+          <h4 class="my-0-font-weight-normal">Cobrado Efectivo</h4>
         </div>
         <div class="card-body">
           <h1 class="card-title-pricing-card-title">$280<small class="text-muted">/ 60 min</small></h1>
@@ -199,7 +212,7 @@
       </div>
       <div class="card mb-4 shadow-sm">
         <div class="card-header">
-          <h4 class="my-0-font-weight-normal">Precio Estadía</h4>
+          <h4 class="my-0-font-weight-normal">Cobrado Tarjetas</h4>
         </div>
         <div class="card-body">
           <h1 class="card-title-pricing-card-title">$2200 <small class="text-muted">/ 12 hs</small></h1>
@@ -208,7 +221,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <form action="hacerentradapatente.php" method="post">
+            <!--<form action="hacerentradapatente.php" method="post">
               <div class="form-group1">
                 <h1>ENTRADA</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
@@ -218,51 +231,32 @@
                   <option value="negro">negro</option>
               </select>
               </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Estacionar</button>
-              <div class="text-center">
-        <form action="hacerentradapatente.php" method="post" name="formulario">
-          <p><li class="display-5">TIPO DE COMBUSTIBLE</p></li>
-
-          <div class="combustible">
-            <div>
-              <input type="radio" name="combustible" value="GNC" required>
-              <label for="gnc">GNC</label>
-            </div>
-            <div>
-              <input type="radio" name="combustible" value="NAFTA">
-              <label for="nafta">NAFTA</label>
-            </div>
-            <div>
-              <input type="radio" name="combustible" value="DIESEL">
-              <label for="diesel">DIESEL</label>
-            </div>
-          </div>
+              <button id="btnregistrar" type="submit" class="btn_send">Estacionar</button>-->
               <div id="tablestop">
               <?php include ('tablaestacionados.php'); ?>
             </div>
             </form>
           </div>
           <div class="col">
-          <form action="hacersalidapatente.php" method="post">
+          <!--<form action="hacersalidapatente.php" method="post">
               <div class="form-group2">
                 <h1>SALIDA</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Cobrar</button>
-              <!--<div id="tablestop">
-              <!?php include ('tablacobrados.php'); ?>
-            </div>-->
-              </form> 
-              <div id="ticketver">
-             <?php include ('ultimoTicket.php'); ?>
+              <button id="btnregistrar" type="submit" class="btn_send">Cobrar</button>-->
+              <div id="tablestop2">
+              <?php include ('tablacobrados.php'); ?>
             </div>
-            <div id= "btnContable">
-            <form action="hacerContable.php" method="post">
+              <!--</form> 
+              <div id="ticketver">
+             <!-?php include ('ultimoTicket.php'); ?>
+            </div-->
+            <!--<form action="hacerTotales.php" method="post">
               <div class="form-group2">
-               
-                </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Informe Contable</button>
-              </div>
+                <h1>total $</h1>
+                </div>-->
+              <!--<button id="btnregistrar" type="submit" class="btn_send">Total Recaudado</button>-->
+              
               </div>
             </form> 
           </div>
