@@ -32,8 +32,8 @@
 
       #nav{
       position: relative;
-      top: -200px;
-      width: 200%;
+      top: -180px;
+      width: 215%;
       left:2px;
     }
 
@@ -69,7 +69,7 @@
   <label for="inputPassword" class="sr-only">Copia de Contraseña</label>
   <input name="copiapass"type="password" id="inputPassword" class="form-control" placeholder="Repetir Password" required>
   <button class="btn btn-lg btn-primary btn-block" type="submit">ALTA</button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
+  <p class="mt-5 mb-3 text-muted">&copy; ScorpionsApp 2021</p>
 </form>
     
   </body>

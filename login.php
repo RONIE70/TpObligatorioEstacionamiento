@@ -60,7 +60,7 @@
     #nav{
       position: relative;
       top: -200px;
-      width: 200%;
+      width: 199%;
       left:2px;
     }
 
@@ -76,7 +76,7 @@
     <div>
     <div id="nav" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-normal">Estacionamiento Scorpions</h5>
-    <nav class="my-2 my-md-0 mr-md-3">
+   <nav class="my-2 my-md-0 mr-md-3">
       <a class="btn btn-outline-primary" href="index.php">Pagina Principal</a>
       <a class="btn btn-outline-primary" href="registro.php">Registro</a>
 </nav>
@@ -95,8 +95,12 @@
   <label for="inputPassword" class="sr-only">Contraseña</label>
   <input name="pass" type="password" id="inputEmail" class="form-control" placeholder="Password" required autofocus>
   <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
-  <p class="mt-5 mb-3 text-muted">&copy; ScorpionsApp S.A. 2021</p>
+  <p>Su usuario no esta registrado por favor complete el formulario</p>
+  <a class="btn btn-outline-primary" href="registro.php">Registro</a>
+  <br><br><p class="mt-5 mb-3 text-muted">&copy; ScorpionsApp S.A. 2021</p>
 </form>
-    
+<footer>
+  
+  </footer> 
   </body>
 </html>

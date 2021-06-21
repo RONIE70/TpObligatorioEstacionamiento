@@ -22,7 +22,7 @@ class estacionamiento
 
 		switch ($nombreArchivo) {
 			case 'estacionados':
-				$tablaHTML="<h4>ESTACIONADOS</h4><table border=2>";
+				$tablaHTML="<h4>ESTACIONADOS</h4><table border=3>";
 				$tablaHTML.="<th>";
 				$tablaHTML.="PATENTE";
 				$tablaHTML.="</th>";
@@ -32,13 +32,16 @@ class estacionamiento
 				$tablaHTML.="<th>";
 				$tablaHTML.="COLOR";
 				$tablaHTML.="</th>";
+				$tablaHTML.="<th>";
+				$tablaHTML.="COMBUSTIBLE";
+				$tablaHTML.="</th>";
 				foreach($listado as $dato)      //</td><td>$auto[1]
 					{
-						$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td></tr>";
+						$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td><td>$dato[3]</td></tr>";
 					}
 				break;
 			case 'cobrados':
-				$tablaHTML="<h3>COBRADOS</h3><table border=2>";
+				$tablaHTML="<h3>COBRADOS</h3><table border=3>";
 				$tablaHTML.="<th>";
 				$tablaHTML.="Patente";
 				$tablaHTML.="</th>";

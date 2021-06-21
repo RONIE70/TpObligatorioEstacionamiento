@@ -82,12 +82,13 @@
     #tablestop{
       padding:5px;
       color:rgb(2, 8, 100);
-      left: 65px;
+      left: -10px;
       position: relative;
       top:25px;
       box-shadow: black 1px 1px 4px 2px;
-      width: 300px;
-
+      width: 450px;
+      border-collapse: collapse;
+      text-align: center;
     }
 
     #tablestop2{
@@ -97,8 +98,9 @@
       position: relative;
       top:25px;
       box-shadow: black 1px 1px 4px 2px;
-      width: 450px;
+      width: 440px;
       text-align: center;
+      border-collapse: collapse;
 
     }
 
@@ -154,6 +156,15 @@
       position: relative;
       right:-72px;
       top:20px;
+    }
+
+
+      tbody tr:nth-child(odd) {
+      background-color: #ff33cc;
+    }
+
+      tbody tr:nth-child(even) {
+      background-color: #e495e4;
     }
   </style>
 

@@ -58,7 +58,7 @@
     padding:5px;
     box-shadow: 0px 3px 3px  #fff;
 }
-#btnregistrar,#btncancelar{
+#btnregistrar,#btncancelar,#btnregistrar1,#btnregistrar2{
     width: 225px;
     background-color: #1612e9;
 }
@@ -81,12 +81,20 @@
     #tablestop{
       padding:5px;
       color:rgb(2, 8, 100);
-      left: 65px;
+      left: 235px;
       position: relative;
-      top:25px;
+      top:-45px;
       box-shadow: black 1px 1px 4px 2px;
-      width: 300px;
+      width: 444px;
+      border-collapse: collapse;
 
+    }
+      tbody tr:nth-child(odd) {
+      background-color: #ff33cc;
+    }
+
+      tbody tr:nth-child(even) {
+      background-color: #e495e4;
     }
 
     #pres{
@@ -114,6 +122,7 @@
       font-family:'Oxygen', sans-serif;
       position: relative;
       top:-30px;
+      left:-185px;
     }
 
     #lead{
@@ -144,16 +153,45 @@
     #ticketver{
       box-shadow: black 1px 1px 4px 2px;
       padding: 0px 3px 5px 5px;
-      width: 300px;
+      width: 360px;
       position: relative;
-      right:-72px;
+      right:-270px;
       top:20px;
+      height: 320px;
+      text-align: center;
     }
 
     #btnContable{
       position: relative;
       right:-5px;
       top:40px;
+    }
+
+    .color{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      top:-60px;
+      font-size: 1rem;
+      font-family:'Oxygen', sans-serif;
+    }
+
+    .text-center{
+      position: relative;
+      top:-15px;
+    }
+
+    #checkboxGnc{
+      position: relative;
+      top:-36px;
+      font-size: 1rem;
+      font-family:'Oxygen', sans-serif;
+    }
+
+    #btnregistrar1{
+      position: relative;
+      top:-65px;
     }
   </style>
 
@@ -212,31 +250,45 @@
               <div class="form-group1">
                 <h1>ENTRADA</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
-                <select name="cboColor" class="form-control form-control-lg form-pat">
+                <!--<select name="cboColor" class="form-control form-control-lg form-pat">
                   <option value="rojo">blanco</option>
                   <option value="azul">azul</option>
                   <option value="negro">negro</option>
-              </select>
+              </select>-->
+              <!--<form action="hacerentradapatente.php" method="post" name="formulario">
+
+              <p>Seleccione la opcion si es correcta<br>
+
+             <input type="checkbox"  name="GNC" id="GNC" value="GNC">
+                            <label for="vehicle1"> GNC</label><br>
+             </p>
+
+              </form>-->
               </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Estacionar</button>
+              
               <div class="text-center">
         <form action="hacerentradapatente.php" method="post" name="formulario">
-          <p><li class="display-5">TIPO DE COMBUSTIBLE</p></li>
-
-          <div class="combustible">
+          <p><br><br><li class="display-5">COLOR DE VEHICULO</p></li>
+          <div class="color">
             <div>
-              <input type="radio" name="combustible" value="GNC" required>
-              <label for="gnc">GNC</label>
+              <input type="radio" name="color" value="BLANCO" required>
+              <label for="gnc">BLANCO</label>
             </div>
             <div>
-              <input type="radio" name="combustible" value="NAFTA">
-              <label for="nafta">NAFTA</label>
+              <input type="radio" name="color" value="NEGRO">
+              <label for="nafta">NEGRO</label>
             </div>
             <div>
-              <input type="radio" name="combustible" value="DIESEL">
-              <label for="diesel">DIESEL</label>
+              <input type="radio" name="color" value="ROJO">
+              <label for="diesel">ROJO</label>
             </div>
+            <div id="checkboxGnc">
+            <p><br>Seleccione la opcion si es correcta<br></p>
+            <input type="checkbox"  name="gnc"  value="GNC">
+                            <label for="combustible"> GNC</label><br>
+              </div>              
           </div>
+          <button id="btnregistrar1" type="submit" class="btn_send">Estacionar</button>
               <div id="tablestop">
               <?php include ('tablaestacionados.php'); ?>
             </div>
@@ -248,7 +300,7 @@
                 <h1>SALIDA</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Cobrar</button>
+              <button id="btnregistrar2" type="submit" class="btn_send">Cobrar</button>
               <!--<div id="tablestop">
               <!?php include ('tablacobrados.php'); ?>
             </div>-->

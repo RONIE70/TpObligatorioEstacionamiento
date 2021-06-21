@@ -1,1 +1,2 @@
-<h4> LA PATENTE  <br>NO EXISTE</h4>
+<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: LLL555 </h3> Combustible: SIN GNC
+ <br>Color: BLANCO <br> Fecha de Ingreso: 2021-06-20 21:33:00 <br>Fecha de Egreso : 2021-06-21 00:31:40<br>Tiempo estacionado en minutos: 178 <br><h3>Total a abonar: <b>$ 320.4</b><h3>

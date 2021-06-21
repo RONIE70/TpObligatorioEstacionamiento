@@ -1,4 +1,7 @@
 <?php
+
+include "funciones.php";
+
 if (isset($_POST["patente"])){
 	$patente = $_POST["patente"];
 }
@@ -8,9 +11,6 @@ else
 }
 
 
-
-include "funciones.php";
-
 $listadoDePatente = leerEntrada ("estacionados.txt","=>");
 $encontrado="N";
 
@@ -19,13 +19,15 @@ foreach ($listadoDePatente as $dato) {
 		$encontrado="S";
 
 		$fechaEntrada=$dato[1];
+		$color=$dato[2];
+		$gnc=$dato[3];
 		$fechaSalida=date ("Y-m-d H:i:s");
 		$minutos = tiempoEnMinutos($fechaEntrada, $fechaSalida);
-		$precio=calcularPrecio($fechaEntrada, $fechaSalida,$patente);
+		$precio=calcularPrecio($fechaEntrada, $fechaSalida,$patente,$gnc,$color);
 
 		$renglon="\n".$patente."=>".$fechaEntrada."=>".$fechaSalida."=>".$precio;
 		GuardarArchivo ("cobrados.txt",$renglon);
-		pantallaInfo($fechaEntrada, $fechaSalida, $precio,$minutos,$dato[0]);
+		pantallaInfo($fechaEntrada, $fechaSalida, $precio,$minutos,$dato[0],$gnc,$color);
 		break;
 	}
 }
@@ -33,7 +35,7 @@ foreach ($listadoDePatente as $dato) {
 if($encontrado=="N")
 {
         //echo "La patente NO ha ingresado!";
-        pantallaInfo("","","","",$patente);
+        pantallaInfo("","","","","","",$patente);
         header ("Location: estacionar.php");
     
 }
@@ -45,7 +47,7 @@ else
 			
 			$fechaEntrada=$dato[1];
 			
-			$renglon="\n".$dato[0]."=>".$fechaEntrada."=>".$dato[2]."=>"."x";
+			$renglon="\n".$dato[0]."=>".$fechaEntrada."=>".$dato[2]."=>".$dato[3];
 			fwrite($archivo,$renglon);
 			
 		}
