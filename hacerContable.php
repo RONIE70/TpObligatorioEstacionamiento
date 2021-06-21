@@ -203,6 +203,7 @@
               
               </div>
             </form> 
+            
         </div>
         <div class="card-body">
           <!--<h1 class="card-title-pricing-card-title">$80<small class="text-muted">/ 15 min</small></h1>-->

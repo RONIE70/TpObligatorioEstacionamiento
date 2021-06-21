@@ -193,6 +193,32 @@
       position: relative;
       top:-65px;
     }
+
+.main{ 
+  margin:auto; 
+  border:1px 
+  solid #7C7A7A; 
+  width:80%; 
+  text-align:center; 
+  padding:30px; 
+  background-color: rgb(41, 145, 243);
+  font-family:"Segoe", "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif
+  box-shadow: black 5px 5px 4px 2px;
+  border-radius: 10px;
+  color:white;
+}
+
+input[type=submit]{ 
+  background:#6ca16e; 
+  width:100%;
+  padding:5px 15px; 
+  background:#ccc; 
+  cursor:pointer;
+  font-size:16px;
+  font-family:"Segoe", "Segoe UI", "DejaVu Sans", "Trebuchet MS",Verdana, sans-serif
+  box-shadow: black 5px 5px 4px 2px;
+  border-radius: 10px;
+}
   </style>
 
   <!-- Custom styles for this template -->
@@ -243,6 +269,15 @@
           <h1 class="card-title-pricing-card-title">$2200 <small class="text-muted">/ 12 hs</small></h1>
         </div>
       </div>
+      <div class="main">
+      <h1>Subir Foto Vehículo</h1>
+      <br>
+      <form enctype="multipart/form-data" action="upload.php" method="POST">
+      <input type="hidden" name="MAX_FILE_SIZE" value="512000" />
+      <p> Enviar mi archivo: <input name="subir_archivo" type="file" /></p>
+      <p> <input type="submit" value="Enviar Archivo" /></p>
+    </form>
+    </div>
       <div class="container">
         <div class="row">
           <div class="col">
