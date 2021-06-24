@@ -24,6 +24,13 @@ function leerEntrada ($nombreArchivo,$separador){
 	return $arrayDeRetorno;
 }
 
+function CrearArchivo($nombreArchivo)
+{
+    $archivo=fopen($nombreArchivo,"w");
+    fwrite($archivo, "");
+    fclose($archivo);
+  }
+
 function CalcularTotales($nombreArchivo)
 {
 	$listadoDeCobrados =  leerEntrada ($nombreArchivo,"=>");
@@ -110,9 +117,30 @@ function pantallaInfo($entro, $salio, $precio, $minutos,$patente,$gnc,$color)
     fclose($archivoTicket);
 
 }
-/* function actualizaEstacionados($patente, $fechaAnterior)
+
+function generarEstacionado($nombreArchivo,$separador)
 {
-    $renglon = "\n".$patente. "=>".$fechaAnterior;
+  $listadoDePatentes = leerEntrada ($nombreArchivo,$separador);
+  $renglon ="";
+  $renglon.= "PATENTE;FECHA ENTRADA;COLOR;COMBUSTIBLE\n";
+  foreach ($listadoDePatentes as $dato) 
+  {
+    $renglon.= $dato[0].";".$dato[1].";".$dato[2].";".$dato[3];
+  }
+  crearArchivoCsv ("estacionados.csv",$renglon);
+}
+
+function crearArchivoCsv ($nombreArchivoCsv,$valores)
+{
+  header("Content-Description: File Transfer");
+  header("Content-Type: application/force-download");
+  header("Content-Disposition: attachment; filename=" .$nombreArchivoCsv);
+  echo $valores;
+}
+
+/*function actualizaEstacionados($patente,$fechaAnterior,$color,$gnc)
+{
+    $renglon="\n".$patente."=>".$fechaAnterior."=>".$color."=>".$gnc;
     $listadoDePatentes = file_get_contents("estacionados.txt");
     $listadoDePatentes = str_replace($renglon, '', $listadoDePatentes);
     file_put_contents("estacionados.txt", $listadoDePatentes);

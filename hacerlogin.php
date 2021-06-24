@@ -1,8 +1,5 @@
 <?php
 include "funciones.php";
-    // var_dump($_GET);
-    // echo "<br>";
-    // var_dump($_POST);
 
 
     if(isset($_POST['correo']))
@@ -41,6 +38,6 @@ include "funciones.php";
         header('Location:error.php');
     }
 
-    // var_dump($listadoDeUsuarios);
+   
 
 ?>

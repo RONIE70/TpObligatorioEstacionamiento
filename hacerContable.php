@@ -41,6 +41,7 @@
     .form-group2,#ticketver {
       color:red;
       font-border:black 2px;
+      width: 150px;
 
     }
     .form-group1{
@@ -63,6 +64,31 @@
     width: 225px;
     background-color: #1612e9;
 }
+#btnregistrar1 {
+    outline: none;
+    text-decoration: none;
+    width:300px;
+    background-color: #1612e9;
+    color: rgb(247, 38, 38);
+    height: 50px;
+    font-size:15pt ;
+    border-radius: 5px;
+    margin: 15px 15px;
+    cursor: pointer;
+    padding:10px;
+    box-shadow: 0px 3px 3px  #fff;
+    position: relative;
+    left:20px;
+    top:14px;
+    font-family:'Oxygen', sans-serif;
+    font-size: 1.2rem ;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    line-height: 35px;
+    letter-spacing: 1px;
+}
+ 
     .my-0-font-weight-normal{
     background-color: #1612e9;
     color: rgb(247, 38, 38);
@@ -147,6 +173,8 @@
     #precio{
       position: relative;
       top:-42px;
+      width: 320px;
+      left:80px;
     }
 
     #ticketver{
@@ -166,6 +194,34 @@
       tbody tr:nth-child(even) {
       background-color: #e495e4;
     }
+
+    #desca{
+      width: 350px;
+      position: relative;
+      right:-500px;
+      top:-250px;
+      height: 160px;
+      font-size: 1rem ;
+      }
+
+    #textprice{
+      position: relative;
+      top:-250px;
+    }
+
+    #texttable{
+      position: relative;
+      top:-250px;
+    }
+    #desca2{
+      width: 350px;
+      position: relative;
+      right:-500px;
+      top:-250px;
+      height: 160px;
+      font-size: 1rem ;
+    }
+    
   </style>
 
   <!-- Custom styles for this template -->
@@ -200,10 +256,18 @@
                <h4>TOTALES</h4>
                 </div>
               <button id="btnregistrar" type="submit" class="btn_send">Total Recaudado</button>
-              
+              </div>
+              </div>
+              </div>
               </div>
             </form> 
             
+       
+        <div id="desca"class="card mb-4 shadow-sm">   
+        <div class="form-group2">
+               <h4>DESCARGAR</h4>
+        <a  id="btnregistrar1" class="btn btn-primary" href="generarEstacionados.php" role="button">Generar Estacionados</a>
+        </div>
         </div>
         <div class="card-body">
           <!--<h1 class="card-title-pricing-card-title">$80<small class="text-muted">/ 15 min</small></h1>-->
@@ -214,22 +278,19 @@
               
         </div>
       </div>
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0-font-weight-normal">Cobrado Efectivo</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title-pricing-card-title">$280<small class="text-muted">/ 60 min</small></h1>
-        </div>
-      </div>
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0-font-weight-normal">Cobrado Tarjetas</h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title-pricing-card-title">$2200 <small class="text-muted">/ 12 hs</small></h1>
-        </div>
-      </div>
+      <div id="desca2"class="card mb-4 shadow-sm">
+      <form action="generarPdf.php" method="post">
+              <div class="form-group2">
+               <h4>IMPRIMIR</h4>
+                </div>
+              <button id="btnregistrar" type="submit" class="btn_send">DESCARGAR PDF</button>
+              </div>
+              </div>
+              </div>
+              </div>
+            </form> 
+          </div>
+      <div id="texttable">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -275,7 +336,7 @@
         </div>
       </div>
     </div>
-    
+    </div>
     
    </body> 
 
