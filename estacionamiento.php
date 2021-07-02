@@ -16,13 +16,13 @@ class estacionamiento
 		return $listaDeAutosLeida;
 	}
 	
-	public static function CrearTablaEstacionados($nombreArchivo) 
+	public static function CrearTablaEstacionados($nombreArchivo,$usuario) 
 	{
 		$listado=estacionamiento::leer($nombreArchivo);
 
 		switch ($nombreArchivo) {
 			case 'estacionados':
-				$tablaHTML="<h4>ESTACIONADOS</h4><table border=3>";
+				$tablaHTML="<h4>ESTACIONADOS</h4><table border=3 cellspacing=2 cellpadding=2>";
 				$tablaHTML.="<th>";
 				$tablaHTML.="PATENTE";
 				$tablaHTML.="</th>";
@@ -35,9 +35,21 @@ class estacionamiento
 				$tablaHTML.="<th>";
 				$tablaHTML.="COMBUSTIBLE";
 				$tablaHTML.="</th>";
+				$tablaHTML.="<th>";
+				$tablaHTML.="FOTO";
+				$tablaHTML.="</th>";
+				$tablaHTML.="<th>";
+				$tablaHTML.="MAIL USUARIO";
+				$tablaHTML.="</th>";
 				foreach($listado as $dato)      //</td><td>$auto[1]
 					{
-						$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td><td>$dato[3]</td></tr>";
+						if($usuario == "TODOS"){
+						$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td><td>$dato[3]</td><td><img src='archivos/$dato[0].jpg' alt='no tiene imagen' width='100'></td><td>$dato[4]</td></tr>";
+						}
+						
+						if ($usuario ==$dato[4]){
+							$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td><td>$dato[3]</td><td><img src='archivos/$dato[0].jpg' alt='no tiene imagen' width='100'></td><td>$dato[4]</td></tr>";
+						}
 					}
 				break;
 			case 'cobrados':
@@ -55,9 +67,11 @@ class estacionamiento
 				$tablaHTML.="Precio";
 				$tablaHTML.="</th>";
 				$tablaHTML.="<th>";
+				$tablaHTML.="MAIL USUARIO";
+				$tablaHTML.="</th>";
 				foreach($listado as $dato)      //</td><td>$auto[1]
 					{
-					$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td><td>$dato[3]</td></tr>";
+					$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td><td>$dato[3]</td></td><td>$dato[4]</td></tr>";
 					}
 					break;
 		}

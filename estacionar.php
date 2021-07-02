@@ -12,8 +12,14 @@
   <?php
     include_once ('titulo.php');
     include_once ("estacionamiento.php");
-    estacionamiento::CrearTablaEstacionados("estacionados");
-    //estacionamiento::CrearTablaEstacionados("cobrados");
+
+    if(isset($_GET["usuario"])){
+        estacionamiento::CrearTablaEstacionados("estacionados",$_GET["usuario"]);
+      } else {
+        estacionamiento::CrearTablaEstacionados("estacionados","TODOS");
+      }
+  
+    estacionamiento::CrearTablaEstacionados("cobrados","TODOS");
    
     ?>
   <!-- Bootstrap core CSS -->
@@ -61,6 +67,7 @@
 #btnregistrar,#btncancelar,#btnregistrar1,#btnregistrar2{
     width: 225px;
     background-color: #1612e9;
+    align-content: center;s
 }
     .my-0-font-weight-normal{
     background-color: #1612e9;
@@ -81,12 +88,13 @@
     #tablestop{
       padding:5px;
       color:rgb(2, 8, 100);
-      left: 235px;
+      left: 135px;
       position: relative;
       top:-45px;
       box-shadow: black 1px 1px 4px 2px;
-      width: 444px;
+      width: 620px;
       border-collapse: collapse;
+      font-size: 0.9rem;
 
     }
       tbody tr:nth-child(odd) {
@@ -159,12 +167,26 @@
       top:20px;
       height: 320px;
       text-align: center;
+      background-color: white;
+    }
+
+    .barra{
+      position: relative;
+      left:380px;
+      top:-32px;
+      
     }
 
     #btnContable{
       position: relative;
-      right:-5px;
+      right:20px;
       top:40px;
+    }
+
+    #btnCobrar{
+      position: relative;
+      left:310px;
+      top:10px;
     }
 
     .color{
@@ -194,19 +216,22 @@
       top:-65px;
     }
 
-.main{ 
-  margin:auto; 
-  border:1px 
-  solid #7C7A7A; 
-  width:80%; 
-  text-align:center; 
-  padding:30px; 
-  background-color: rgb(41, 145, 243);
-  font-family:"Segoe", "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif
-  box-shadow: black 5px 5px 4px 2px;
-  border-radius: 10px;
-  color:white;
-}
+  .main{ 
+    position: relative;
+    top:-70px;
+    margin:auto; 
+    border:1px 
+    solid #7C7A7A; 
+    width:60%;
+    height:40%; 
+    text-align:center; 
+    padding:20px; 
+    background-color: rgb(41, 145, 243);
+    font-family:"Segoe", "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif
+    box-shadow: black 5px 5px 4px 2px;
+    border-radius: 10px;
+    color:white;
+    }
 
 input[type=submit]{ 
   background:#6ca16e; 
@@ -219,6 +244,53 @@ input[type=submit]{
   box-shadow: black 5px 5px 4px 2px;
   border-radius: 10px;
 }
+ #img{
+  position: relative;
+  top:30px;
+  left:185px;
+  font-size: 1rem;
+  font-family:'Oxygen', sans-serif;
+  background:#6ca16e;
+  box-shadow: black 3px 3px 2px 1px;
+  border-radius: 10px;
+  width:60%;
+  height: 40%;
+  padding:0.8px;
+}
+  #checkboxGnc{
+      position: relative;
+      top:-13px;
+      font-size: 1rem;
+      font-family:'Oxygen', sans-serif;
+    }
+    .display-5{
+      font-size: 1rem;
+      font-family:'Oxygen', sans-serif;
+      position: relative;
+      top:-10px;
+      left:-185px;
+    }
+
+    .list{
+      position: relative;
+      top:70px;
+    }
+
+    .combo{
+      width:40%;
+      margin:auto; 
+    border:1px 
+    solid #7C7A7A; 
+    width:60%;
+    height:40%; 
+    text-align:center; 
+    padding:10px; 
+    background-color: rgb(41, 145, 243);
+    font-family:"Segoe", "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif
+    box-shadow: black 5px 5px 4px 2px;
+    border-radius: 10px;
+    color:white;
+    }
   </style>
 
   <!-- Custom styles for this template -->
@@ -236,6 +308,11 @@ input[type=submit]{
   </div>
   <div id="pres">
   <p>REGISTRO DE ENTRADAS Y SALIDAS DE VEHICULOS </p>
+  <p>
+    <?php
+    echo "USUARIO LOGUEADO ACTUALMENTE: ".$_COOKIE["USUARIO"];
+    ?>
+  </p>
   </div>
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h2 class="display-4">Estacionamiento ScorpionsApp</h2>
@@ -269,19 +346,13 @@ input[type=submit]{
           <h1 class="card-title-pricing-card-title">$2200 <small class="text-muted">/ 12 hs</small></h1>
         </div>
       </div>
-      <div class="main">
-      <h1>Subir Foto Vehículo</h1>
-      <br>
-      <form enctype="multipart/form-data" action="upload.php" method="POST">
-      <input type="hidden" name="MAX_FILE_SIZE" value="512000" />
-      <p> Enviar mi archivo: <input name="subir_archivo" type="file" /></p>
-      <p> <input type="submit" value="Enviar Archivo" /></p>
-    </form>
+      
+     
     </div>
       <div class="container">
         <div class="row">
           <div class="col">
-            <form action="hacerentradapatente.php" method="post">
+            <form enctype="multipart/form-data" action="hacerentradapatente.php" method="post">
               <div class="form-group1">
                 <h1>ENTRADA</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
@@ -291,18 +362,16 @@ input[type=submit]{
                   <option value="negro">negro</option>
               </select>-->
               <!--<form action="hacerentradapatente.php" method="post" name="formulario">
-
               <p>Seleccione la opcion si es correcta<br>
-
              <input type="checkbox"  name="GNC" id="GNC" value="GNC">
                             <label for="vehicle1"> GNC</label><br>
              </p>
-
               </form>-->
               </div>
               
               <div class="text-center">
-        <form action="hacerentradapatente.php" method="post" name="formulario">
+          <form enctype="multipart/form-data" action="hacerentradapatente.php" method="POST" >
+
           <p><br><br><li class="display-5">COLOR DE VEHICULO</p></li>
           <div class="color">
             <div>
@@ -317,34 +386,57 @@ input[type=submit]{
               <input type="radio" name="color" value="ROJO">
               <label for="diesel">ROJO</label>
             </div>
+            
             <div id="checkboxGnc">
             <p><br>Seleccione la opcion si es correcta<br></p>
             <input type="checkbox"  name="gnc"  value="GNC">
                             <label for="combustible"> GNC</label><br>
               </div>              
           </div>
+          <div class="main">
+            <h5>FOTO DEL VEHICULO</h5>
+            
+            <p> Enviar mi archivo: <input name="subir_archivo" type="file" /></p>
+            </div>
           <button id="btnregistrar1" type="submit" class="btn_send">Estacionar</button>
               <div id="tablestop">
               <?php include ('tablaestacionados.php'); ?>
             </div>
             </form>
+             <p> Seleccion de usuarios </p>
+            <form enctype="multipart/form-data" action="hacerListado.php" method="post">
+            <select class="combo" name="cboUsuario" class="form-control form-control-lg form-pat">
+                  <option value="TODOS">TODOS</option>
+                  <option value="<?php echo $_COOKIE["USUARIO"]; ?>"><?php echo $_COOKIE["USUARIO"]; ?></option>
+                  
+              </select>
+              <div class = "list">
+              <button id="btnregistrar1" type="submit" class="btn_send">LISTADO</button>
+              </div>
+            </form>
           </div>
           <div class="col">
-          <form action="hacersalidapatente.php" method="post">
+          <form enctype="multipart/form-data" action="hacersalidapatente.php" method="post">
               <div class="form-group2">
                 <h1>SALIDA</h1>
                 <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
+              <div id= "btnCobrar">
               <button id="btnregistrar2" type="submit" class="btn_send">Cobrar</button>
               <!--<div id="tablestop">
               <!?php include ('tablacobrados.php'); ?>
             </div>-->
+          </div>
               </form> 
+              
               <div id="ticketver">
              <?php include ('ultimoTicket.php'); ?>
             </div>
+            <div class="barra">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/EAN13.svg/330px-EAN13.svg.png" width="130" height="46">
+            </div>
             <div id= "btnContable">
-            <form action="hacerContable.php" method="post">
+            <form enctype="multipart/form-data" action="hacerContable.php" method="post">
               <div class="form-group2">
                
                 </div>

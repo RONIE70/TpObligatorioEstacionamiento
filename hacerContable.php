@@ -13,8 +13,8 @@
   <?php
     include_once ('titulo.php');
     include_once ("estacionamiento.php");
-    estacionamiento::CrearTablaEstacionados("estacionados");
-    estacionamiento::CrearTablaEstacionados("cobrados");
+    estacionamiento::CrearTablaEstacionados("estacionados","TODOS");
+    estacionamiento::CrearTablaEstacionados("cobrados","TODOS");
    
     ?>
   <!-- Bootstrap core CSS -->
@@ -108,26 +108,27 @@
     #tablestop{
       padding:5px;
       color:rgb(2, 8, 100);
-      left: -10px;
+      left: -75px;
       position: relative;
       top:25px;
       box-shadow: black 1px 1px 4px 2px;
-      width: 450px;
+      width: 500px;
       border-collapse: collapse;
       text-align: center;
+      font-size: 0.7rem;
     }
 
     #tablestop2{
       padding:5px;
       color:rgb(2, 8, 100);
-      left: 10px;
+      left: 60px;
       position: relative;
       top:25px;
       box-shadow: black 1px 1px 4px 2px;
-      width: 440px;
+      width: 400px;
       text-align: center;
       border-collapse: collapse;
-
+      font-size: 0.85rem;
     }
 
     #pres{

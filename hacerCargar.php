@@ -5,7 +5,7 @@
 <title>Enviar un Archivo con PHP</title>
 <style type="text/css">
 
-*{ font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif}
+{ font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif}
 .main{ 
 	margin:auto; 
 	border:1px 

@@ -1,1 +1,1 @@
-<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: hhh999 </h3> Combustible: SIN GNC <br>Color: ROJO <br> Fecha de Ingreso: 2021-06-24 00:38:21 <br>Fecha de Egreso : 2021-06-24 00:38:29<br>Tiempo estacionado en minutos: 0 <br><h3>Total a abonar: <b>$ 0</b><h3>
+<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: aaa111 </h3> Combustible: SIN GNC <br>Color: ROJO <br> Fecha de Ingreso: 2021-07-01 22:35:50 <br>Fecha de Egreso : 2021-07-01 22:37:33<br>Tiempo estacionado en minutos: 1 <br><h3>Total a abonar: <b>$ 3</b><h3>
