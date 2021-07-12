@@ -21,12 +21,12 @@ foreach ($listadoDePatente as $dato) {
 		$fechaEntrada=$dato[1];
 		$color=$dato[2];
 		$gnc=$dato[3];
-		$_COOKIE["USUARIO"]=$_dato[4];
+		//$_COOKIE["USUARIO"]=$_dato[4];
 		$fechaSalida=date ("Y-m-d H:i:s");
 		$minutos = tiempoEnMinutos($fechaEntrada, $fechaSalida);
-		$precio=calcularPrecio($fechaEntrada, $fechaSalida,$patente,$gnc,$color);
+		$precio=calcularPrecio($fechaEntrada, $fechaSalida,$patente,$gnc,$color);//."=>".$_COOKIE["USUARIO"]
 
-		$renglon="\n".$patente."=>".$fechaEntrada."=>".$fechaSalida."=>".$precio."=>".$_dato[4];
+		$renglon="\n".$patente."=>".$fechaEntrada."=>".$fechaSalida."=>".$precio."=>".$_COOKIE["USUARIO"];
 		GuardarArchivo ("cobrados.txt",$renglon);
 		pantallaInfo($fechaEntrada, $fechaSalida, $precio,$minutos,$dato[0],$gnc,$color);
 		//actualizaEstacionados($patente, $dato[1],$dato[2],$dato[3]);
@@ -47,9 +47,9 @@ else
 	foreach ($listadoDePatente as $dato) {
 		if($dato[0]!=$patente){
 			
-			$fechaEntrada=$dato[1];
+			$fechaEntrada=$dato[1];                                         
 			
-			$renglon="\n".$dato[0]."=>".$fechaEntrada."=>".$dato[2]."=>".$dato[3]."=>".$dato[4];
+			$renglon="\n".$dato[0]."=>".$fechaEntrada."=>".$dato[2]."=>".$dato[3]."=>".$dato[4]."=>x";
 			fwrite($archivo,$renglon);
 			
 		}

@@ -125,7 +125,7 @@ function generarEstacionado($nombreArchivo,$separador)
   $renglon.= "PATENTE;FECHA ENTRADA;COLOR;COMBUSTIBLE;USUARIO\n";
   foreach ($listadoDePatentes as $dato) 
   {
-    $renglon.= $dato[0].";".$dato[1].";".$dato[2].";".$dato[3].";".$dato[4];
+    $renglon.= $dato[0].";".$dato[1].";".$dato[2].";".$dato[3].";".$dato[4]."\n";
   }
   crearArchivoCsv ("estacionados.csv",$renglon);
 }

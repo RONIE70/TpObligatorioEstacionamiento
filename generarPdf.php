@@ -1,6 +1,13 @@
 <?php
 require('fpdf/fpdf.php');
 include "funciones.php";
+$renglones="";
+$arrayDeRetorno = array();
+$listadoDeCobrados =  leerEntrada ("cobrados.txt","=>");
+
+
+$pdf=new FPDF();
+
 
 class PDF extends FPDF
 {
@@ -29,43 +36,6 @@ function Footer()
     // Número de página
     $this->Cell(0,10,'Pagina '.$this->PageNo().'/{nb}',0,0,'C');
 }
-
-
-
-
-/*$pdf->SetFont('Arial','B',9);
-foreach ($listadoDePatente as $datos) {
-   if(isset($datos[0])){
-      $patente=$datos[0];
-      $pdf->Cell(15,10,$patente,0,0,'L');
-      $fechaEntrada=$datos[5];
-      $pdf->Cell(33,10,$ingreso,0,0,'L');
-      $fechaSalida=$datos[2];
-      $pdf->Cell(32,10,$salida,0,0,'L');
-      $gnc=$datos[3];
-      $pdf->Cell(15,10,$valor,0,0,'R');
-      //$gnc=$datos[6];
-      //$gncl="No";
-      if (isset($_POST["gnc"])) 
-{
-    $gnc = "GNC";
-    }
-      $pdf->Cell(13,10,$gncl,0,0,'C');
-      $categ=$datos[7];
-      $pdf->Cell(15,10,$categ,0,0,'C');
-      $PerIngreso=$datos[8];
-      $pdf->Cell(35,10,$PerIngreso,0,0,'L');
-      $PerEgreso=$datos[4];
-      $pdf->Cell(32,10,$PerEgreso,0,1,'L');
-      //$renglones .= $patente." ".$salida." ".$valor." ".$PerEgreso." ".$ingreso." ".$gnc." ".$categ." ".$PerIngreso;
-      
-      
-   }
-
-}
-$pdf->MultiCell(170,5,$renglones,0,'L',0);
-$pdf->Output(); //Mostramos el PDF creado*/
-
 
 function TablaColores($header)
 {
@@ -104,11 +74,71 @@ $fill=true;
    $this->Cell(160,0,'','T');
 }
 
-   
-   
+
 }
 
 $pdf=new PDF();
+$pdf->AddPage();
+$pdf->AliasNbPages();
+$pdf->SetY(40);
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(80,10,utf8_decode('¡Gestion de Estacionamientos!'));
+$pdf->SetX(-40);
+$pdf-> Write (10,"ScorpionsApp");
+//$header= array("patente","fecha/hora","color","combustible");
+//$pdf->TablaColores($header);
+
+
+$pdf-> Ln(20);
+$pdf->SetFont('Arial','B',14);
+$pdf-> Write (10,"Listado de Autos Cobrados");
+$pdf-> Ln(20);
+$pdf->SetFont('Arial','B',9);
+$pdf->SetFillColor(224,235,255);
+$pdf->SetTextColor(0);
+$pdf->Cell(20,10,utf8_decode('PATENTE'),1,0,'C',true);
+$pdf->SetFillColor(224,235,255);
+$pdf->SetTextColor(0);
+$pdf->Cell(38,10,utf8_decode('FECHA ENTRADA'),1,0,'C',true);
+$pdf->SetFillColor(224,235,255);
+$pdf->SetTextColor(0);
+$pdf->Cell(38,10,utf8_decode('FECHA SALIDA'),1,0,'C',true);
+$pdf->SetFillColor(224,235,255);
+$pdf->SetTextColor(0);
+$pdf->Cell(20,10,utf8_decode('PRECIO'),1,0,'C',true);
+$pdf->SetFillColor(224,235,255);
+$pdf->SetTextColor(0);
+$pdf->Cell(40,10,utf8_decode('USUARIO'),1,0,'C',true);
+
+//Títulos de las columnas
+//$header= array("patente","fecha/hora Entrada","fecha/hora Salida","Importe Cobrado","Usuario ha Cobrado");
+foreach ($listadoDeCobrados as $datos) {
+  
+      $pdf->SetTextColor(255);
+      $pdf->SetDrawColor(128,0,0);
+      $pdf->SetLineWidth(.3);
+      $patente=$datos[0];
+      $pdf-> Ln(10);
+      $pdf->SetFillColor(241,239,142);
+      $pdf->SetTextColor(2);
+      $pdf->Cell(20,10,$patente,1,0,'C',true);
+      $fechaEntrada=$datos[1];
+      $pdf->Cell(38,10,$fechaEntrada,1,0,'C',true);
+      $fechaSalida=$datos[2];
+      $pdf->Cell(38,10,$fechaSalida,1,0,'C',true);
+      $precio=$datos[3];
+      $pdf->Cell(20,10,$precio,1,0,'C',true);
+      $usuario=$datos[4];
+      $pdf->Cell(40,10,$usuario,1,0,'C',true);
+    //}
+  }
+   
+   $pdf->Output();
+   header('Content_type:application/pdf');
+   $file_content= $pdf->Output("Documento Final.pdf", 'F', true);  
+
+
+/*$pdf=new PDF();
 //Títulos de las columnas
 $header= array("patente","fecha/hora","color","combustible");
 //$data = $pdf->LoadData('estacionados.txt');
@@ -125,12 +155,12 @@ $pdf->Cell(80,10,utf8_decode('¡Gestion de Estacionamientos!'));
 $pdf->SetY(65);
 $pdf->TablaColores($header);
 $pdf->Output();
-$pdf->Output("Documento Final.pdf", 'F');
+$pdf->Output("Documento Final.pdf", 'F', );*/
 
 
 ?>
 
-<!doctype html>
+<!--<!doctype html>
 <html lang="en">
 <li id='q15'>
 <p><b>15.</b> <span class='question'>
@@ -146,4 +176,4 @@ $mail-&gt;Send();</code></pre>
 </span>
 </p>
 </li>
-</html>
+</html>-->

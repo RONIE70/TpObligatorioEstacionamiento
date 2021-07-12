@@ -23,11 +23,6 @@ else{
 	die();
 }
 
-/*$_FILES['userfile']['name'] y/o en $_FILES['userfile']['error']
-if ($_FILES['subir_archivo']['tmp_name'] == ""){
-	$directorio = 'icon/';
-    $subirArchivo = "/fitito.png"; 
-}*/
 
 $directorio = 'archivos/';
 $subirArchivo = $directorio.$patente.".jpg";
@@ -48,7 +43,7 @@ else
 if($patente != "")
 {
 	$hora = date("Y-m-d H:i:s"); //."=>".$foto
-	$renglon="\n".$patente."=>".$hora."=>".$color."=>".$gnc."=>".$_COOKIE["USUARIO"];
+	$renglon="\n".$patente."=>".$hora."=>".$color."=>".$gnc."=>".$_COOKIE["USUARIO"]."=>x";
 	GuardarArchivo ("estacionados.txt",$renglon);
 
  	header ("Location: estacionar.php");

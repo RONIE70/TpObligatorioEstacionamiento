@@ -95,8 +95,8 @@
   <label for="inputPassword" class="sr-only">Contraseña</label>
   <input name="pass" type="password" id="inputEmail" class="form-control" placeholder="Password" required autofocus>
   <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
-  <p>Su usuario no esta registrado por favor complete el formulario</p>
-  <a class="btn btn-outline-primary" href="registro.php">Registro</a>
+  <p>Por favor, tome una foto en tiempo real al loguearse</p>
+  <a class="btn btn-primary btn-lg" href="webcam-master/webcam.php" role="button">Usar Webcam </a>
   <br><br><p class="mt-5 mb-3 text-muted">&copy; ScorpionsApp S.A. 2021</p>
 </form>
 <footer>
