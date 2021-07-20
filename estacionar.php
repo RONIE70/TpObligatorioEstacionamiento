@@ -7,6 +7,10 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.80.0">
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+  <script type="text/javascript" src="js/funcionAutoCompletar.js"></script>
+
   <!--<title>Estacionar - Estacionamiento Scorpions</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">-->
   <?php
@@ -67,7 +71,7 @@
 #btnregistrar,#btncancelar,#btnregistrar1,#btnregistrar2{
     width: 225px;
     background-color: #1612e9;
-    align-content: center;s
+    align-content: center;
 }
     .my-0-font-weight-normal{
     background-color: #1612e9;
@@ -277,8 +281,8 @@ input[type=submit]{
     }
 
     .combo{
-      width:40%;
-      margin:auto; 
+    width:40%;
+    margin:auto; 
     border:1px 
     solid #7C7A7A; 
     width:60%;
@@ -355,7 +359,7 @@ input[type=submit]{
             <form enctype="multipart/form-data" action="hacerentradapatente.php" method="post">
               <div class="form-group1">
                 <h1>ENTRADA</h1>
-                <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
+                <input id="autocomplete" name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
                 <!--<select name="cboColor" class="form-control form-control-lg form-pat">
                   <option value="rojo">blanco</option>
                   <option value="azul">azul</option>
@@ -419,7 +423,7 @@ input[type=submit]{
           <form enctype="multipart/form-data" action="hacersalidapatente.php" method="post">
               <div class="form-group2">
                 <h1>SALIDA</h1>
-                <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
+                <input id="autocomplete" name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
               </div>
               <div id= "btnCobrar">
               <button id="btnregistrar2" type="submit" class="btn_send">Cobrar</button>

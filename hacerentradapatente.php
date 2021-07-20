@@ -29,9 +29,7 @@ $subirArchivo = $directorio.$patente.".jpg";
 
 if (move_uploaded_file($_FILES['subir_archivo']['tmp_name'], $subirArchivo)) 
 {
-    echo "<h1>•Fotos disponibles en carpeta archivos•</h1>";
-    echo "El archivo es válido y se cargó correctamente.<br><br>";
-	  echo"<a href='".$subirArchivo."' target='_blank'><img src='".$subirArchivo."' width='150'></a>";
+    // echo"<a href='".$subirArchivo."' target='_blank'><img src='".$subirArchivo."' width='150'></a>";
 } 
 else 
 {

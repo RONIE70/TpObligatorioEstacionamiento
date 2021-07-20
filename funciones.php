@@ -106,7 +106,7 @@ function pantallaInfo($entro, $salio, $precio, $minutos,$patente,$gnc,$color)
    {
     if($gnc=="GNC")
    {
-    $textoTicket = "<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: $patente </h3> Combustible: $gnc <br>Color: $color <br> Fecha de Ingreso: $entro <br>Fecha de Egreso : $salio<br>Tiempo estacionado en minutos: $minutos <br><h3>Total a abonar : <b>\$ $precio</b><h3><h5>(incluye $50 impuesto GNC)</h5>";
+    $textoTicket = "<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: $patente </h3> Combustible: $gnc -ADICIONAL $50 Dec.A12- <br>Color: $color <br> Fecha de Ingreso: $entro <br>Fecha de Egreso : $salio<br>Tiempo estacionado en minutos: $minutos <br><h3>Total a abonar : <b>\$ $precio</b><h3>";
    }
    else
    {
@@ -144,7 +144,9 @@ function crearArchivoCsv ($nombreArchivoCsv,$valores)
     $listadoDePatentes = file_get_contents("estacionados.txt");
     $listadoDePatentes = str_replace($renglon, '', $listadoDePatentes);
     file_put_contents("estacionados.txt", $listadoDePatentes);
-}*/
+}
+//$directorio = 'archivos/';
+        //@unlink('archivos/',$directorio.$patente.".jpg");*/
 
  date_default_timezone_set("America/Argentina/Buenos_Aires");
 ?>

@@ -25,5 +25,5 @@
 	fwrite($fp,$unencoded );
 	fclose($fp);
 
-	echo "images/".$datetime.$user.".png";
+	echo "Carpeta: images/\n"."Fecha: ".$datetime."\nusuario: ".$user.".png";
 ?>

@@ -94,9 +94,9 @@
   <input name="correo" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
   <label for="inputPassword" class="sr-only">Contraseña</label>
   <input name="pass" type="password" id="inputEmail" class="form-control" placeholder="Password" required autofocus>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
   <p>Por favor, tome una foto en tiempo real al loguearse</p>
   <a class="btn btn-primary btn-lg" href="webcam-master/webcam.php" role="button">Usar Webcam </a>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">LOGIN</button>
   <br><br><p class="mt-5 mb-3 text-muted">&copy; ScorpionsApp S.A. 2021</p>
 </form>
 <footer>

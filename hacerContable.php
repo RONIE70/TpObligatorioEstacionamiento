@@ -240,6 +240,11 @@
   </div>
   <div id="pres">
   <p>SISTEMA DE ADMINISTRACION CONTABLE - FACTURACION </p>
+  <p>
+    <?php
+    echo "USUARIO LOGUEADO ACTUALMENTE: ".$_COOKIE["USUARIO"];
+    ?>
+  </p>
   </div>
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h2 class="display-4">Estacionamiento ScorpionsApp</h2>

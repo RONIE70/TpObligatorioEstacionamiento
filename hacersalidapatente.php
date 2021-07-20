@@ -29,6 +29,9 @@ foreach ($listadoDePatente as $dato) {
 		$renglon="\n".$patente."=>".$fechaEntrada."=>".$fechaSalida."=>".$precio."=>".$_COOKIE["USUARIO"];
 		GuardarArchivo ("cobrados.txt",$renglon);
 		pantallaInfo($fechaEntrada, $fechaSalida, $precio,$minutos,$dato[0],$gnc,$color);
+		
+		$directorio = 'archivos/';
+        unlink ($directorio.$patente.".jpg");
 		//actualizaEstacionados($patente, $dato[1],$dato[2],$dato[3]);
 		break;
 	}

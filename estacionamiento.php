@@ -44,11 +44,26 @@ class estacionamiento
 				foreach($listado as $dato)      //</td><td>$auto[1]
 					{
 						if($usuario == "TODOS"){
-						$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td><td>$dato[3]</td><td><img src='archivos/$dato[0].jpg' alt='no tiene imagen' width='100'></td><td>$dato[4]</td></tr>";
+							$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td><td>$dato[3]</td>";
+							if(file_exists("archivos/$dato[0].jpg"))
+							{
+								$tablaHTML.="<td><img src='archivos/$dato[0].jpg'  width='100'></td>";
+							}else{
+								$tablaHTML.="<td><img src='archivos/predeterminado.png' width='100'></td>";
+							}
+							$tablaHTML.="<td>$dato[4]</td></tr>";
+						
 						}
 						
 						if ($usuario ==$dato[4]){
-							$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td><td>$dato[3]</td><td><img src='archivos/$dato[0].jpg' alt='no tiene imagen' width='100'></td><td>$dato[4]</td></tr>";
+							$tablaHTML.="<tr><td>$dato[0]</td><td>$dato[1]</td><td>$dato[2]</td><td>$dato[3]</td>";
+							if(file_exists("archivos/$dato[0].jpg"))
+							{
+								$tablaHTML.="<td><img src='archivos/$dato[0].jpg'  width='100'></td>";
+							}else{
+								$tablaHTML.="<td><img src='archivos/predeterminado.png' width='100'></td>";
+							}
+							$tablaHTML.="<td>$dato[4]</td></tr>";
 						}
 					}
 				break;
