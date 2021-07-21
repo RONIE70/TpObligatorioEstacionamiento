@@ -1,1 +1,1 @@
-<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: yuo999 </h3> Combustible: SIN GNC <br>Color: BLANCO <br> Fecha de Ingreso: 2021-07-19 22:40:00 <br>Fecha de Egreso : 2021-07-19 22:41:12<br>Tiempo estacionado en minutos: 1 <br><h3>Total a abonar: <b>$ 2.7</b><h3>
+<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: DRA226 </h3> Combustible: GNC -ADICIONAL $50 Dec.A12- <br>Color: ROJO <br> Fecha de Ingreso: 2021-07-19 22:39:31 <br>Fecha de Egreso : 2021-07-20 23:44:24<br>Tiempo estacionado en minutos: 1504 <br><h3>Total a abonar : <b>$ 1554</b><h3>

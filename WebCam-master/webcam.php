@@ -134,7 +134,7 @@
 		</style>
 	</head>
 	<body>
-		<p>Por favor verifique la calidad de su foto, antes de guardarla, Gracias</p>
+		<p><h4>Por favor verifique la calidad de su foto, antes de guardarla, Gracias</h4></p>
 		<div id="cuadro">
 		<video id="v" width="74%" height="70%" autoplay></video>
 		</div>

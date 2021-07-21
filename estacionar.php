@@ -7,9 +7,6 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.80.0">
-  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-  <script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
-  <script type="text/javascript" src="js/funcionAutoCompletar.js"></script>
 
   <!--<title>Estacionar - Estacionamiento Scorpions</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">-->
@@ -26,6 +23,10 @@
     estacionamiento::CrearTablaEstacionados("cobrados","TODOS");
    
     ?>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+  <script type="text/javascript" src="js/funcionAutoCompletar.js"></script>
+  
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <style>
@@ -359,7 +360,7 @@ input[type=submit]{
             <form enctype="multipart/form-data" action="hacerentradapatente.php" method="post">
               <div class="form-group1">
                 <h1>ENTRADA</h1>
-                <input id="autocomplete" name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
+                <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente" required autofocus>
                 <!--<select name="cboColor" class="form-control form-control-lg form-pat">
                   <option value="rojo">blanco</option>
                   <option value="azul">azul</option>
@@ -423,7 +424,7 @@ input[type=submit]{
           <form enctype="multipart/form-data" action="hacersalidapatente.php" method="post">
               <div class="form-group2">
                 <h1>SALIDA</h1>
-                <input id="autocomplete" name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
+                <input id="autocomplete" name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente" required autofocus>
               </div>
               <div id= "btnCobrar">
               <button id="btnregistrar2" type="submit" class="btn_send">Cobrar</button>

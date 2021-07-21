@@ -96,6 +96,39 @@ class estacionamiento
 		fclose($archivo);
 	}
 	
+	/*  --------------------------------------------------------------------------------------------------------------------------------*/
+	public static function generarAutocompletar() //Funcion para crear el archivo  js/funcionAutoCompletar.js 
+	{
+		$arrayPatentes = estacionamiento::leer("estacionados");
+		$ListadoPatentes="";
+		foreach($arrayPatentes as $datos){
+			$ListadoPatentes.="\"$datos[0]\","; 
+		}
 
+		$textoDelArchivoJS="$(function(){
+		             
+					  var patentes = [ 
+					    	
+					    $ListadoPatentes	
+
+					  ];
+
+					  // setup autocomplete function pulling from patentes[] array
+					  $('#autocomplete').autocomplete({
+					    lookup: patentes,
+					    onSelect: function (suggestion) {
+					      var thehtml = '<strong>patente: </strong> ' + suggestion.value + ' <br> <strong>ingreso: </strong> ' + suggestion.data;
+					      $('#outputcontent').html(thehtml);
+					         $('#botonIngreso').css('display','none');
+		      						console.log('aca llego');
+					    }
+					  });
+
+					});";
+					
+		$archivo=fopen("js/funcionAutoCompletar.js","w");
+		fwrite($archivo, $textoDelArchivoJS);
+		fclose($archivo);		
+	}
 }
 ?>
