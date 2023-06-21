@@ -1,0 +1,119 @@
+ <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    .form-pat {
+      text-align: center;
+      margin: 0 auto;
+      width: 80%;
+    }
+    .form-group2,#ticketver {
+      color:red;
+      font-border:black 2px;
+
+    }
+    .form-group1{
+      color:green;
+    }
+    .btn_send{
+      background-color: cyan;
+    }
+  button
+     {
+    color: white;
+    font-size:15pt ;
+    border-radius: 5px;
+    margin: 8px 8px;
+    cursor: pointer;
+    padding:5px;
+    box-shadow: 0px 3px 3px  #fff;
+}
+#btnregistrar,#btncancelar{
+    width: 225px;
+    background-color: #1612e9;
+}
+    .my-0-font-weight-normal{
+    background-color: #1612e9;
+    color: rgb(247, 38, 38);
+    height: 30px;
+    font-size:15pt ;
+    border-radius: 5px;
+    margin: 8px 8px;
+    cursor: pointer;
+    padding:5px;
+    box-shadow: 0px 3px 3px  #fff;
+    }
+
+    #body{
+      background-color: rgb(228, 228, 228);
+    }
+
+    #tablestop{
+      
+
+    }
+
+    #pres{
+    font-family:'Oxygen', sans-serif;
+    font-size: 1rem ;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    border-width: 20px;
+    line-height: 35px;
+    text-shadow:5px 5px 5px rgb(134, 201, 240) ;
+    letter-spacing: 1px;
+    background-color: rgb(41, 145, 243);
+    }
+
+    .display-4{
+      font-size: 2.5rem;
+      font-family:'Oxygen', sans-serif;
+      position: relative;
+      top:-30px;
+    }
+
+    #lead{
+      position: relative;
+      top:-45px;
+    }
+
+    .card-body{
+      height: 10px;
+    }
+
+    .card-title-pricing-card-title{
+      font-size:2rem;
+      position: relative;
+      top:-19px;
+    }
+
+    .row {
+      position: relative;
+      top:20px;
+    }
+
+    #precio{
+      position: relative;
+      top:-42px;
+    }
+
+    #ticketver{
+      box-shadow: black 1px 1px 4px 2px;
+      padding: 0px 3px 5px 5px;
+      width: 300px;
+      position: relative;
+      right:-72px;
+      top:20px;
+    }
+  </style>

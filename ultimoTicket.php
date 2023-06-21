@@ -1,1 +1,1 @@
-<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: DRA226 </h3> Combustible: GNC -ADICIONAL $50 Dec.A12- <br>Color: ROJO <br> Fecha de Ingreso: 2021-07-19 22:39:31 <br>Fecha de Egreso : 2021-07-20 23:44:24<br>Tiempo estacionado en minutos: 1504 <br><h3>Total a abonar : <b>$ 1554</b><h3>
+<br><h5>ULTIMO TICKET</h5> <h3>PATENTE: CVS789 </h3> GNC: NO <br>Color: ROJO <br> Fecha de Ingreso: 2021-11-28 08:13 <br>Fecha de Egreso : 2021-11-28 08:40<br>Tiempo estacionado en minutos: 27 <br><h3>Total a abonar: <b>$ 81</b><h3>

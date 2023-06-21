@@ -7,34 +7,16 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.80.0">
-  <!--<title>Bottom navbar example · Bootstrap v4.6</title>
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/navbar-bottom/">-->
   <?php
     include_once ('titulo.php');
-
-    ?>
-  <!-- Bootstrap core CSS -->
+  ?>
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="container">
     <div class="jumbotron mt-3">
-      <h1>Usuario Registrado!</h1>
+      <h1><img class= "img" src="./icon/portada.png" height="100">Usuario Registrado!</h1>
       <p class="lead"><li>Los datos han sido ingresados con exito</li>
         <li>Dirijase a login. Con el usuario y contraseña creados, ingrese al sistema. GRACIAS</li></p>
       <a class="btn btn-lg btn-primary" href="login.php" role="button">Login &raquo;</a>

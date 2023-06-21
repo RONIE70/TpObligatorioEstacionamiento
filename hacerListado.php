@@ -1,8 +1,15 @@
 <?php
+	include_once ("AccesoDatos.php");
+	include_once ("Vehiculo.php");
+	include_once ("Usuario.php");
+	include_once("Estacionado.php");
+
+
     $valor=$_POST["cboUsuario"];
 
-    include_once ("estacionamiento.php");
-    estacionamiento::CrearTablaEstacionados("estacionados",$valor);
-    header ("Location: estacionar.php?usuario=$valor");
+  
+   Estacionado::CrearTablaEstacionados("estacionados",$valor);
+   
+   header ("Location: estacionadosHacerTabla.php");
    
     ?>

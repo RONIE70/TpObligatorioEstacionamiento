@@ -14,8 +14,9 @@
     include_once ('titulo.php');
 
     ?>
-  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -45,6 +46,8 @@
     }
 
     #pres{
+    position: relative;
+    top:30px;
     font-family:'Oxygen', sans-serif;
     font-size: 1rem ;
     text-align: center;
@@ -58,8 +61,8 @@
 
     .img{
       position: relative;
-      top:-50px;
-      margin-left: 80px;
+      top:-10px;
+      margin-left: 30px;
     }
 
     .display-3{
@@ -80,10 +83,13 @@
     }
 
   .container2{
-    font-size:1.2rem;
-    position: relative;
-    margin-left: 50px;
-    margin-top: -200px;
+  position: relative;
+    margin-left: -78px;
+    margin-top:-120px;
+  }
+  .container{
+position: relative;
+top: 130px;
   }
 
   .col-md-4{
@@ -145,64 +151,110 @@ footer{
     font-size: 0.8rem;
     margin: auto;
 }
+#boton{
+position: relative;
+ right: -290px;
 
+}
+.botonsep{
+  position: relative;
+  top:-5px;
+  padding: 20px;
+}
+.text{
+  font-family:'Oxygen', sans-serif;
+  color: white;
+font-size:1.6rem ;
+}
+#comenza{
+  position: relative;
+  top:8px;
+  left:-20px;
+}
+#row{
+  position: relative;
+  top:-100px;
+}
 
     
   </style>
-  <!-- Custom styles for this template -->
-  <link href="jumbotron.css" rel="stylesheet">
+  
 </head>
 <body id="body">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">•Estacionamiento Scorpions App•</a>
+    <img class= "img" src="./icon/portada.png" height="100">
+    <a class="text" ><img class= "img" src="./icon/portada.png" height="100">Estacionamiento Scorpions App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div id="boton">
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-      <!--<li class="nav-item active">
-          <a class="nav-link" href="estacionar.php">Estacionar<span class="sr-only">(current)</span></a>
-        </li>-->
-        <li class="nav-item">
-          <a class="nav-link" href="registro.php">Registro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a>
-        </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="error.php">Testing error</a>
-        </li>-->
+        <div class="botonsep">
+      <li class="nav-item">
         
-          </div>
+          <a class="btn btn-outline-success my-2 my-sm-0" href="registro.php">Registro</a>
+        
+        </li>
+        </div>
+        <li class="nav-item">
+          <div class="botonsep">
+          <a class="btn btn-outline-success my-2 my-sm-0" href="login.php">Login</a></div>
         </li>
       </ul>
-      
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
     </div>
-  </nav>
-  <div id="pres">
-  <p>GESTION Y ADMINISTRACION DE ESTACIONAMIENTOS - RESPALDO DE INFORMACION - SOPORTE TECNICO 24 Hs. </p>
   </div>
-  <main role="main">
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <img class= "img" src="./icon/portada.png" height="180">
-        <h1 class="display-3">Bienvenidos! Scorpions</h1>
-        <h4 class="display-4">App Estacionamiento<h4>
-        <div class="container2">
-          <p><li> Está desarrollada para gestionar el control y cobro en los Estacionamientos</li>
-           <li>Es un sistema versátil y práctico tanto para los usuarios como para los operadores, permitiendo un escalonamiento modular y altamente flexible</li><li> Y por supuesto, nos permite cobrar por el servicio e imprimir el ticket en forma automatica.
-        <li>¡Accede a una demo ahora!</li></p>
-      </div>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Comenza a Usarla &raquo;</a></p>
+  </nav>
+
+
+ <div id="pres">
+  
+       <div id="comenza">
+        <p><a class="btn btn-outline-success my-2 my-sm-0" href="ClienteBlog.php" role="button">Dejanos tu comentario &raquo;</a></p></div>
       </div>
     </div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./imagenes/fachada-2.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>EL LUGAR QUE ESPERABAS ENCONTRAR</h5>
+        <p>Máxima Seguridad, Responsabilidad y Atención</p>
+        <div id="comenza">
+        <p><a class="btn btn-outline-success my-2 my-sm-0" href="ClienteBlog.php" role="button">Dejanos tu comentario &raquo;</a></p></div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./imagenes/pngegg.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="209784-P04BLG-419.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
     <div class="container">
-      <!-- Example row of columns -->
+      
       <div id="row" class="row">
         <div class="col-md-4">
           <img src="./icon/laptop.png" width="125" height="105">
@@ -228,7 +280,7 @@ footer{
         </div>
       </div>
       <hr>
-    </div> <!-- /container -->
+    </div> 
   </main>
   <footer>
   <div id="pie">
@@ -299,10 +351,5 @@ footer{
                         </div>
                     
 </footer>
-<!--<footer class="container">
-    <p>&copy; ScorpionsApp 2021</p>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>-->
 </body>
 </html>

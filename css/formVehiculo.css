@@ -1,0 +1,270 @@
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    .form-pat {
+      text-align: center;
+      margin: 0 auto;
+      width: 80%;
+    }
+    .form-group2,#ticketver {
+      color:red;
+      font-border:black 2px;
+
+    }
+    .form-group1{
+      color:green;
+    }
+    .btn_send{
+      background-color: cyan;
+    }
+  button
+     {
+    color: white;
+    font-size:15pt ;
+    border-radius: 5px;
+    margin: 8px 8px;
+    cursor: pointer;
+    padding:5px;
+    box-shadow: 0px 3px 3px  #fff;
+}
+#btnregistrar,#btncancelar,#btnregistrar1,#btnregistrar2{
+    width: 225px;
+    background-color: #1612e9;
+    align-content: center;
+}
+    .my-0-font-weight-normal{
+    background-color: #1612e9;
+    color: rgb(247, 38, 38);
+    height: 30px;
+    font-size:15pt ;
+    border-radius: 5px;
+    margin: 8px 8px;
+    cursor: pointer;
+    padding:5px;
+    box-shadow: 0px 3px 3px  #fff;
+    }
+
+    #body{
+      background-color: rgb(228, 228, 228);
+    }
+
+    #tablestop{
+      padding:5px;
+      color:rgb(2, 8, 100);
+      left: 135px;
+      position: relative;
+      top:-45px;
+      box-shadow: black 1px 1px 4px 2px;
+      width: 650px;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+
+    }
+      tbody tr:nth-child(odd) {
+      background-color: #ff33cc;
+    }
+
+      tbody tr:nth-child(even) {
+      background-color: #e495e4;
+    }
+
+    #pres{
+    font-family:'Oxygen', sans-serif;
+    font-size: 1rem ;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    border-width: 20px;
+    line-height: 35px;
+    text-shadow:5px 5px 5px rgb(134, 201, 240) ;
+    letter-spacing: 1px;
+    background-color: rgb(41, 145, 243);
+    }
+
+    .display-4{
+      font-size: 2.5rem;
+      font-family:'Oxygen', sans-serif;
+      position: relative;
+      top:-30px;
+    }
+
+    .display-5{
+      font-size: 1rem;
+      font-family:'Oxygen', sans-serif;
+      position: relative;
+      top:-30px;
+      left:-185px;
+    }
+
+    #lead{
+      position: relative;
+      top:-45px;
+    }
+
+    .card-body{
+      height: 10px;
+    }
+
+    .card-title-pricing-card-title{
+      font-size:2rem;
+      position: relative;
+      top:-19px;
+    }
+
+    .row {
+      position: relative;
+      top:20px;
+    }
+
+    #precio{
+      position: relative;
+      top:-42px;
+    }
+
+    #ticketver{
+      box-shadow: black 1px 1px 4px 2px;
+      padding: 0px 3px 5px 5px;
+      width: 360px;
+      position: relative;
+      right:-270px;
+      top:20px;
+      height: 320px;
+      text-align: center;
+      background-color: white;
+    }
+
+    .barra{
+      position: relative;
+      left:380px;
+      top:-32px;
+      
+    }
+
+    #btnContable{
+      position: relative;
+      right:20px;
+      top:40px;
+    }
+
+    #btnCobrar{
+      position: relative;
+      left:310px;
+      top:10px;
+    }
+
+    .color{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      top:-60px;
+      font-size: 1rem;
+      font-family:'Oxygen', sans-serif;
+    }
+
+    .text-center{
+      position: relative;
+      top:-15px;
+    }
+
+    #checkboxGnc{
+      position: relative;
+      top:-36px;
+      font-size: 1rem;
+      font-family:'Oxygen', sans-serif;
+    }
+
+    #btnregistrar1{
+      position: relative;
+      top:-65px;
+    }
+
+  .main{ 
+    position: relative;
+    top:-70px;
+    margin:auto; 
+    border:1px 
+    solid #7C7A7A; 
+    width:60%;
+    height:40%; 
+    text-align:center; 
+    padding:20px; 
+    background-color: rgb(41, 145, 243);
+    font-family:"Segoe", "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif
+    box-shadow: black 5px 5px 4px 2px;
+    border-radius: 10px;
+    color:white;
+    }
+
+input[type=submit]{ 
+  background:#6ca16e; 
+  width:100%;
+  padding:5px 15px; 
+  background:#ccc; 
+  cursor:pointer;
+  font-size:16px;
+  font-family:"Segoe", "Segoe UI", "DejaVu Sans", "Trebuchet MS",Verdana, sans-serif
+  box-shadow: black 5px 5px 4px 2px;
+  border-radius: 10px;
+}
+ #img{
+  position: relative;
+  top:30px;
+  left:185px;
+  font-size: 1rem;
+  font-family:'Oxygen', sans-serif;
+  background:#6ca16e;
+  box-shadow: black 3px 3px 2px 1px;
+  border-radius: 10px;
+  width:60%;
+  height: 40%;
+  padding:0.8px;
+}
+  #checkboxGnc{
+      position: relative;
+      top:-13px;
+      font-size: 1rem;
+      font-family:'Oxygen', sans-serif;
+    }
+    .display-5{
+      font-size: 1rem;
+      font-family:'Oxygen', sans-serif;
+      position: relative;
+      top:-10px;
+      left:-185px;
+    }
+
+    .list{
+      position: relative;
+      top:70px;
+    }
+
+    .combo{
+    width:40%;
+    margin:auto; 
+    border:1px 
+    solid #7C7A7A; 
+    width:60%;
+    height:40%; 
+    text-align:center; 
+    padding:10px; 
+    background-color: rgb(41, 145, 243);
+    font-family:"Segoe", " UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif
+    box-shadow: black 5px 5px 4px 2px;
+    border-radius: 10px;
+    color:white;
+    }
+    
+    
+  </style>

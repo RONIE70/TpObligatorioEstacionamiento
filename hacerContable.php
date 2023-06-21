@@ -12,229 +12,53 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/pricing/">-->
   <?php
     include_once ('titulo.php');
-    include_once ("estacionamiento.php");
-    estacionamiento::CrearTablaEstacionados("estacionados","TODOS");
-    estacionamiento::CrearTablaEstacionados("cobrados","TODOS");
+    include_once ("Estacionado.php");
+    include_once ("AccesoDatos.php");
+    Estacionado::CrearTablaEstacionados("estacionados","TODOS");
+    Estacionado::CrearTablaEstacionados("cobrados","TODOS");
    
     ?>
-  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet"  href="./css/hacerContable.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-    .form-pat {
-      text-align: center;
-      margin: 0 auto;
-      width: 80%;
-    }
-    .form-group2,#ticketver {
-      color:red;
-      font-border:black 2px;
-      width: 150px;
-
-    }
-    .form-group1{
-      color:green;
-    }
-    .btn_send{
-      background-color: cyan;
-    }
-  button
-     {
-    color: white;
-    font-size:15pt ;
-    border-radius: 5px;
-    margin: 8px 8px;
-    cursor: pointer;
-    padding:5px;
-    box-shadow: 0px 3px 3px  #fff;
-}
-#btnregistrar,#btncancelar{
-    width: 225px;
-    background-color: #1612e9;
-}
-#btnregistrar1 {
-    outline: none;
-    text-decoration: none;
-    width:300px;
-    background-color: #1612e9;
-    color: rgb(247, 38, 38);
-    height: 50px;
-    font-size:15pt ;
-    border-radius: 5px;
-    margin: 15px 15px;
-    cursor: pointer;
-    padding:10px;
-    box-shadow: 0px 3px 3px  #fff;
+  <link href="./css/pricing.css" rel="stylesheet">
+  <style type="text/css">
+    .txtusu{
     position: relative;
-    left:20px;
-    top:14px;
-    font-family:'Oxygen', sans-serif;
-    font-size: 1.2rem ;
-    text-align: center;
-    color: white;
-    border-radius: 10px;
-    line-height: 35px;
-    letter-spacing: 1px;
-}
- 
-    .my-0-font-weight-normal{
-    background-color: #1612e9;
-    color: rgb(247, 38, 38);
-    height: 30px;
-    font-size:15pt ;
-    border-radius: 5px;
-    margin: 8px 8px;
-    cursor: pointer;
-    padding:5px;
-    box-shadow: 0px 3px 3px  #fff;
-    }
-
-    #body{
-      background-color: rgb(228, 228, 228);
-    }
-
-    #tablestop{
-      padding:5px;
-      color:rgb(2, 8, 100);
-      left: -75px;
+    left:430px;
+    top:200px;
+    font-family:"Segoe", "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+  }
+  #listado{
       position: relative;
-      top:25px;
-      box-shadow: black 1px 1px 4px 2px;
-      width: 500px;
-      border-collapse: collapse;
-      text-align: center;
-      font-size: 0.7rem;
+      left:500px;
+      top:170px;
     }
-
-    #tablestop2{
-      padding:5px;
-      color:rgb(2, 8, 100);
-      left: 60px;
-      position: relative;
-      top:25px;
-      box-shadow: black 1px 1px 4px 2px;
-      width: 400px;
-      text-align: center;
-      border-collapse: collapse;
-      font-size: 0.85rem;
-    }
-
-    #pres{
-    font-family:'Oxygen', sans-serif;
-    font-size: 1rem ;
-    text-align: center;
-    color: white;
-    border-radius: 10px;
-    border-width: 20px;
-    line-height: 35px;
-    text-shadow:5px 5px 5px rgb(134, 201, 240) ;
-    letter-spacing: 1px;
+    .combo{
+    position: relative;
+    left:-200px;
+    top: 60px;
+    width:20%;
+    margin:auto; 
+    border:1px 
+    solid #7C7A7A; 
+    height:30%; 
+    text-align:center; 
+    padding:5px; 
     background-color: rgb(41, 145, 243);
+    font-family:"Segoe", "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+    box-shadow: black 5px 5px 4px 2px;
+    border-radius: 10px;
+    color:white;
     }
-
-    .display-4{
-      font-size: 2.5rem;
-      font-family:'Oxygen', sans-serif;
-      position: relative;
-      top:-30px;
-    }
-
-    #lead{
-      position: relative;
-      top:-45px;
-    }
-
-    .card-body{
-      height: 10px;
-    }
-
-    .card-title-pricing-card-title{
-      font-size:2rem;
-      position: relative;
-      top:-19px;
-    }
-
-    .row {
-      position: relative;
-      top:20px;
-    }
-
-    #precio{
-      position: relative;
-      top:-42px;
-      width: 320px;
-      left:80px;
-    }
-
-    #ticketver{
-      box-shadow: black 1px 1px 4px 2px;
-      padding: 0px 3px 5px 5px;
-      width: 300px;
-      position: relative;
-      right:-72px;
-      top:20px;
-    }
-
-
-      tbody tr:nth-child(odd) {
-      background-color: #ff33cc;
-    }
-
-      tbody tr:nth-child(even) {
-      background-color: #e495e4;
-    }
-
-    #desca{
-      width: 350px;
-      position: relative;
-      right:-500px;
-      top:-250px;
-      height: 160px;
-      font-size: 1rem ;
-      }
-
-    #textprice{
-      position: relative;
-      top:-250px;
-    }
-
-    #texttable{
-      position: relative;
-      top:-250px;
-    }
-    #desca2{
-      width: 350px;
-      position: relative;
-      right:-500px;
-      top:-250px;
-      height: 160px;
-      font-size: 1rem ;
-    }
-    
   </style>
-
-  <!-- Custom styles for this template -->
-  <link href="pricing.css" rel="stylesheet">
 </head>
 <body id="body">
      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h4 class="my-0 mr-md-auto font-weight-normal">Estacionamiento ScorpionsApp</h4>
+    <h4 class="my-0 mr-md-auto font-weight-normal"><img class= "img" src="./icon/portada.png" height="100">Estacionamiento</h4>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="btn btn-outline-primary" href="index.php">Pagina Principal</a>
-      <a class="btn btn-outline-primary" href="estacionar.php">Estacionar</a>
-
+      <a class="btn btn-outline-primary" href="estacionadoHacerTablaConsulta.php">Consultar Cobrados</a>
+      <a class="btn btn-outline-primary" href="vehiculoHacerSalida.php">Salida Vehiculo</a>
+      <a class="btn btn-outline-primary" href="estacionar.php">Entrada</a>
     </nav>
     <!--<a class="btn btn-outline-primary" href="login.php">Login</a>-->
   </div>
@@ -247,113 +71,57 @@
   </p>
   </div>
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h2 class="display-4">Estacionamiento ScorpionsApp</h2>
     <div id="lead">
-    <p><li>En esta pantalla el usuario podra ingresar/egresar la patente del cliente</li><li> Se visualiza 1 listado de los vehiculos estacionados con su hora de ingreso</li><li>Otro listado de vehiculos egresados con el importe cobrado en cada caso</li> </p>
+    <p><li>DESCARGAS DE ARCHIVOS DE CONSULTA </li></p>
   </div>
   </div>
-  <div class="container">
-    <div id="precio" class="card-deck mb-3 text-center">
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0-font-weight-normal"></h4>
-          <form action="hacerTotales.php" method="post">
-              <div class="form-group2">
-               <h4>TOTALES</h4>
-                </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Total Recaudado</button>
-              </div>
-              </div>
-              </div>
-              </div>
-            </form> 
-            
-       
-        <div id="desca"class="card mb-4 shadow-sm">   
-        <div class="form-group2">
-               <h4>DESCARGAR</h4>
-        <a  id="btnregistrar1" class="btn btn-primary" href="generarEstacionados.php" role="button">Generar Estacionados</a>
-        </div>
-        </div>
-        <div class="card-body">
-          <!--<h1 class="card-title-pricing-card-title">$80<small class="text-muted">/ 15 min</small></h1>-->
-         
+   <div id="btn-vehiculo"> 
+<nav class="navigator">
+    <ul class="menu">
+            <li> <a class="menu_celda" href="#">DESCARGAS</a>
+        <ul class="submenu">
+              <li><a href="generarEstacionados.php">ESTACIONADOS.SCV</a></li>
+              <li><a href="EstacionadogenerarPdf.php">COBRADOS.PDF</a></li>
+              <li><a href="hacerTotales.php">RECAUDACION $</a></li>   
+              <li><a href="formBorrarUsuario.php">FACTURA AFIP</a></li>
+        </ul>
+            </li>
+    </ul>
+</nav>
+  </div>
+<div>
+  <h1><h1>
+</div>
+  <div >
+              <?php //include ('tablaestacionados.php'); ?>
+             </div>
+ 
               
+      
+              <div >
+              <?php //include ('tablacobrados.php'); ?>
               </div>
-            </form> 
-              
-        </div>
-      </div>
-      <div id="desca2"class="card mb-4 shadow-sm">
-      <form action="generarPdf.php" method="post">
-              <div class="form-group2">
-               <h4>IMPRIMIR</h4>
-                </div>
-              <button id="btnregistrar" type="submit" class="btn_send">DESCARGAR PDF</button>
-              </div>
-              </div>
-              </div>
-              </div>
-            </form> 
-          </div>
-      <div id="texttable">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <!--<form action="hacerentradapatente.php" method="post">
-              <div class="form-group1">
-                <h1>ENTRADA</h1>
-                <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
-                <select name="cboColor" class="form-control form-control-lg form-pat">
-                  <option value="rojo">blanco</option>
-                  <option value="azul">azul</option>
-                  <option value="negro">negro</option>
-              </select>
-              </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Estacionar</button>-->
-              <div id="tablestop">
-              <?php include ('tablaestacionados.php'); ?>
-            </div>
-            </form>
-          </div>
-          <div class="col">
-          <!--<form action="hacersalidapatente.php" method="post">
-              <div class="form-group2">
-                <h1>SALIDA</h1>
-                <input name="patente" class="form-control form-control-lg form-pat" type="text" placeholder="Ingresar Patente">
-              </div>
-              <button id="btnregistrar" type="submit" class="btn_send">Cobrar</button>-->
-              <div id="tablestop2">
-              <?php include ('tablacobrados.php'); ?>
-            </div>
-              <!--</form> 
-              <div id="ticketver">
-             <!-?php include ('ultimoTicket.php'); ?>
-            </div-->
-            <!--<form action="hacerTotales.php" method="post">
-              <div class="form-group2">
-                <h1>total $</h1>
-                </div>-->
-              <!--<button id="btnregistrar" type="submit" class="btn_send">Total Recaudado</button>-->
-              
-              </div>
-            </form> 
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+ 
     
-   </body> 
-
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
-      <div class="row">
-        <div class="col-12 col-md">
-          <small class="d-block mb-3 text-muted">&copy; EscorpionsApp 2021</small>
+             <div class="txtusu">
+             <h3> Seleccion de usuarios </h3>
+             </div>
+             <div id="listado">
+            <form enctype="multipart/form-data" action="estacionadosHacerTabla.php" method="GET">
+            <select class="combo" name="cboUsuario" class="form-control form-control-lg form-pat">
+                  <option value="TODOS">TODOS</option>
+                  <option value="<?php echo $_COOKIE["USUARIO"]; ?>"><?php echo $_COOKIE["USUARIO"]; ?></option>
+              </select>
+              <div class ="list">
+              <button id="btnregistrar1" type="submit" class="btn_send">LISTADO</button>
+              </div>
+            </form>
+            </div>
+         <!-- </div>
         </div>
-        <div class="col-6 col-md">
-          
-    </footer>
-  </div>
+      </div>-->
+   
 </body>
+    
+ 
 </html>
